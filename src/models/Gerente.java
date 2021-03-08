@@ -10,5 +10,25 @@ package models;
  * @author jair
  */
 public class Gerente extends Empleado{
+
+    public Gerente(String noTelefono, String correoElectronico, String direccion, 
+            float salario, String nombre, String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, correoElectronico, direccion, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Gerente(String noTelefono, float salario, String nombre, 
+            String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Gerente(String noTelefono, String correoElectronico, float salario, 
+            String nombre, String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, correoElectronico, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Gerente(float salario, String nombre, String apellidoPaterno, 
+            String apellidoMaterno) {
+        super(salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
     
 }

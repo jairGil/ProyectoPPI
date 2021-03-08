@@ -10,11 +10,36 @@ package models;
  * @author jair
  */
 public class Empleado extends Persona {
-    
+
     private String noTelefono;
     private String correoElectronico;
     private String direccion;
     private float salario;
+
+    public Empleado(String noTelefono, String correoElectronico,
+                    String direccion, float salario, String nombre, 
+                    String apellidoPaterno, String apellidoMaterno) {
+        super(nombre, apellidoPaterno, apellidoMaterno);
+        this.noTelefono = noTelefono;
+        this.correoElectronico = correoElectronico;
+        this.direccion = direccion;
+        this.salario = salario;
+    }
+
+    public Empleado(String noTelefono, float salario, String nombre, 
+                    String apellidoPaterno, String apellidoMaterno) {
+        this(noTelefono, "", "", salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+    
+    public Empleado(String noTelefono, String correoElectronico, float salario, 
+                    String nombre, String apellidoPaterno, String apellidoMaterno) {
+        this(noTelefono, correoElectronico, "", salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+    
+    public Empleado(float salario, String nombre, String apellidoPaterno, 
+                    String apellidoMaterno) {
+        this("", "", "", salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
 
     public String getNoTelefono() {
         return noTelefono;
@@ -47,5 +72,5 @@ public class Empleado extends Persona {
     public void setSalario(float salario) {
         this.salario = salario;
     }
-    
+
 }

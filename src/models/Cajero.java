@@ -10,5 +10,25 @@ package models;
  * @author jair
  */
 public class Cajero extends Empleado {
+
+    public Cajero(String noTelefono, String correoElectronico, String direccion, 
+            float salario, String nombre, String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, correoElectronico, direccion, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Cajero(String noTelefono, float salario, String nombre, 
+            String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Cajero(String noTelefono, String correoElectronico, float salario, 
+            String nombre, String apellidoPaterno, String apellidoMaterno) {
+        super(noTelefono, correoElectronico, salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
+
+    public Cajero(float salario, String nombre, String apellidoPaterno, 
+            String apellidoMaterno) {
+        super(salario, nombre, apellidoPaterno, apellidoMaterno);
+    }
     
 }

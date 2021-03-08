@@ -14,6 +14,12 @@ public class Persona {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    
+    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno) {
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
 
     public String getNombre() {
         return nombre;
