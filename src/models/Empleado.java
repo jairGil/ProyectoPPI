@@ -28,17 +28,17 @@ public class Empleado extends Persona {
 
     public Empleado(String noTelefono, float salario, String nombre, 
                     String apellidoPaterno, String apellidoMaterno) {
-        this(noTelefono, "", "", salario, nombre, apellidoPaterno, apellidoMaterno);
+        this(noTelefono, null, null, salario, nombre, apellidoPaterno, apellidoMaterno);
     }
     
     public Empleado(String noTelefono, String correoElectronico, float salario, 
                     String nombre, String apellidoPaterno, String apellidoMaterno) {
-        this(noTelefono, correoElectronico, "", salario, nombre, apellidoPaterno, apellidoMaterno);
+        this(noTelefono, correoElectronico, null, salario, nombre, apellidoPaterno, apellidoMaterno);
     }
     
     public Empleado(float salario, String nombre, String apellidoPaterno, 
                     String apellidoMaterno) {
-        this("", "", "", salario, nombre, apellidoPaterno, apellidoMaterno);
+        this(null, null, null, salario, nombre, apellidoPaterno, apellidoMaterno);
     }
 
     public String getNoTelefono() {
