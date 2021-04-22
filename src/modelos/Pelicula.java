@@ -1,4 +1,4 @@
-package models;
+package modelos;
 
 public class Pelicula {
     private String titulo;
