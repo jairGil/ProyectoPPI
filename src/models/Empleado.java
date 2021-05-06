@@ -1,58 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
-/**
- *
- * @author jair
- */
+import excepciones.ExEmpleado;
+import excepciones.ExPersona;
+
 public class Empleado extends Persona {
 
     private String noTelefono;
-    private String direccion;
     private float salario;
 
-    public Empleado(String noTelefono, String correoElectronico,
-                    String direccion, float salario, String nombre, 
-                    String apellidoPaterno, String apellidoMaterno) {
+    public Empleado(String noTelefono, float salario, String nombre, 
+                    String apellidoPaterno, String apellidoMaterno) 
+            throws ExPersona, ExEmpleado {
         super(nombre, apellidoPaterno, apellidoMaterno);
         this.noTelefono = noTelefono;
-        this.direccion = direccion;
         this.salario = salario;
     }
 
-    public Empleado(String noTelefono, float salario, String nombre, 
-                    String apellidoPaterno, String apellidoMaterno) {
-        this(noTelefono, null, null, salario, nombre, apellidoPaterno, apellidoMaterno);
+    public Empleado(String noTelefono, String nombre, 
+                    String apellidoPaterno, String apellidoMaterno) 
+            throws ExPersona, ExEmpleado {
+        this(noTelefono, 0, nombre, apellidoPaterno, apellidoMaterno);
     }
     
-    public Empleado(String noTelefono, String correoElectronico, float salario, 
-                    String nombre, String apellidoPaterno, String apellidoMaterno) {
-        this(noTelefono, correoElectronico, null, salario, nombre, apellidoPaterno, apellidoMaterno);
+    public Empleado (Persona p, String noTelefono, float salario) throws ExPersona, ExEmpleado {
+        this(noTelefono, salario, p.getNombre(), p.getApellidoPaterno(), p.getApellidoMaterno());
     }
     
-    public Empleado(float salario, String nombre, String apellidoPaterno, 
-                    String apellidoMaterno) {
-        this(null, null, null, salario, nombre, apellidoPaterno, apellidoMaterno);
+    public Empleado (Persona p, String noTelefono) throws ExPersona, ExEmpleado {
+        this(noTelefono, 0, p.getNombre(), p.getApellidoPaterno(), p.getApellidoMaterno());
     }
-
+    
     public String getNoTelefono() {
         return noTelefono;
     }
 
-    public void setNoTelefono(String noTelefono) {
+    public void setNoTelefono(String noTelefono) throws ExEmpleado {
+        if (noTelefono.length() != 10) 
+            throw new ExEmpleado("Longitud del telefono no válida");
+        if (!noTelefono.matches("\\d{10}"))
+            throw new ExEmpleado("Numero no válido");
         this.noTelefono = noTelefono;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public float getSalario() {

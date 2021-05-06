@@ -1,35 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
-import excepciones.ExcepcionesString;
+import excepciones.ExPersona;
 
-/**
- *
- * @author jair
- */
 public class Persona {
 
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     
-    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno) {
-        this.nombre = nombre;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
+    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno) throws ExPersona {
+        setNombre(nombre);
+        setApellidoPaterno(apellidoPaterno);
+        setApellidoMaterno(apellidoMaterno);
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) throws ExcepcionesString {
+    public void setNombre(String nombre) throws ExPersona {
         if (nombre.equals("") || nombre.isEmpty())
-            throw new ExcepcionesString("Nombre no válido");
+            throw new ExPersona("Nombre no válido");
         this.nombre = nombre;
     }
 
@@ -37,9 +28,9 @@ public class Persona {
         return apellidoPaterno;
     }
 
-    public void setApellidoPaterno(String apellidoPaterno) throws ExcepcionesString {
+    public void setApellidoPaterno(String apellidoPaterno) throws ExPersona {
         if (apellidoPaterno.equals("") || apellidoPaterno.isEmpty())
-            throw new ExcepcionesString("Apellido Paterno no válido");
+            throw new ExPersona("Apellido Paterno no válido");
         this.apellidoPaterno = apellidoPaterno;
     }
 
@@ -47,9 +38,9 @@ public class Persona {
         return apellidoMaterno;
     }
 
-    public void setApellidoMaterno(String apellidoMaterno) throws ExcepcionesString {
+    public void setApellidoMaterno(String apellidoMaterno) throws ExPersona {
         if (apellidoMaterno.equals("") || apellidoMaterno.isEmpty())
-            throw new ExcepcionesString("Apellido Materno no válido");
+            throw new ExPersona("Apellido Materno no válido");
         this.apellidoMaterno = apellidoMaterno;
     }
     
