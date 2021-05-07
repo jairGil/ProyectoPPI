@@ -12,7 +12,7 @@ public class Empleado extends Persona {
                     String apellidoPaterno, String apellidoMaterno) 
             throws ExPersona, ExEmpleado {
         super(nombre, apellidoPaterno, apellidoMaterno);
-        this.noTelefono = noTelefono;
+        setNoTelefono(noTelefono);
         this.salario = salario;
     }
 

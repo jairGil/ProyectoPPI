@@ -3,8 +3,7 @@ package modelos;
 public class Pelicula {
     private String titulo;
     private String director;
-    private float calificacion;
-    private String duracion;
+    private Horario duracion;
 
     public String getTitulo() {
         return titulo;
@@ -22,19 +21,12 @@ public class Pelicula {
         this.director = director;
     }
 
-    public float getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(float calificacion) {
-        this.calificacion = calificacion;
-    }
-
-    public String getDuracion() {
+    public Horario getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(String duracion) {
+    public void setDuracion(Horario duracion) {
         this.duracion = duracion;
     }
+
 }
