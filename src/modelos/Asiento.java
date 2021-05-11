@@ -19,9 +19,9 @@ public class Asiento {
     }
 
     public void setFila(char fila) throws ExAsiento {
-        if(fila < 65 && fila > 90)
+        if(fila < 65 || fila > 90)
             throw new ExAsiento("Valor de columnas inválido");
-        if(fila < 97 && fila > 122)
+        if(fila < 97 || fila > 122)
             throw new ExAsiento("Valor de columnas inválido");
         this.fila = fila;
     }
