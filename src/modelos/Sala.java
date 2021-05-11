@@ -5,6 +5,8 @@
  */
 package modelos;
 
+import excepciones.ExAsiento;
+import excepciones.ExSala;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +21,60 @@ public class Sala {
     private ArrayList<Asiento> registroAsientos = new ArrayList();
     private boolean lleno;
     private float costoBoleto;
-    private Cartelera cartelera;
+    //private Cartelera cartelera;
+
+    public Sala(int noSala, int noAsientos, int noFilas, int noColumnas, boolean lleno, float costoBoleto) throws ExAsiento, ExSala {
+        setNoSala(noSala);
+        setNoAsientos(noAsientos);
+        setNoFilas(noFilas);
+        setNoColumnas(noColumnas);
+        this.lleno = lleno;
+        setCostoBoleto(costoBoleto);
+        crearAsientos(this.noFilas, this.noColumnas);
+        
+    }
+    
+    public void crearAsientos(int filas, int columnas) throws ExAsiento{
+        
+        for(int i = 67; i <= (67 + filas); i++){
+            for(int j = 1; j <= columnas; j++){
+                registroAsientos.add(new Asiento((char)i,j,false));
+            }
+        }
+        
+    }
+
+    public void setNoSala(int noSala) throws ExSala {
+        if(noSala <= 0)
+            throw new ExSala("Número de sala inválido");
+        this.noSala = noSala;
+    }
+
+    public void setNoAsientos(int noAsientos) throws ExSala {
+        if(noAsientos <= 0)
+            throw new ExSala("Número de asientos inválido");
+        this.noAsientos = noAsientos;
+    }
+
+    public void setNoFilas(int noFilas) throws ExSala {
+        if(noFilas <= 0)
+            throw new ExSala("Número de filas inválido");
+        this.noFilas = noFilas;
+    }
+
+    public void setNoColumnas(int noColumnas) throws ExSala {
+        if(noColumnas <= 0)
+            throw new ExSala("Número de columnas inválido");
+        this.noColumnas = noColumnas;
+    }
+
+    public void setCostoBoleto(float costoBoleto) throws ExSala {
+        if(costoBoleto <= 0)
+            throw new ExSala("Costo de boleto inválido");
+        this.costoBoleto = costoBoleto;
+    }
+    
+    
     
     
 }
