@@ -20,4 +20,6 @@ public class Sala {
     private boolean lleno;
     private float costoBoleto;
     private Cartelera cartelera;
+    
+    
 }
