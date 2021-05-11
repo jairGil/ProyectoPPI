@@ -5,6 +5,7 @@
  */
 package modelos;
 
+import excepciones.ExSucursal;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +18,28 @@ public class Sucursal {
     private ArrayList<Sala> salas = new ArrayList();
     private ArrayList<Empleado> empleados = new ArrayList();
     
-    public Sucursal(int noSucursal, String ubicacion, ){
+    public Sucursal(int noSucursal, String ubicacion) throws ExSucursal{
+        setNoSucursal(noSucursal);
+        setUbicacion(ubicacion);
+    }
+    
+    public void agregarSala(Sala sala){
+        salas.add(sala);
+    }
+    
+    public void agregarEmpleado(Empleado e){
+        empleados.add(e);
+    }
+
+    public void setNoSucursal(int noSucursal) throws ExSucursal {
+        if(noSucursal<0)
+            throw new ExSucursal("Número de sucursal inválido");
+        this.noSucursal = noSucursal;
         
     }
+
+    public void setUbicacion(String ubicacion){
+        this.ubicacion = ubicacion;
+    }
+    
 }
