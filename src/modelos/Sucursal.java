@@ -41,5 +41,11 @@ public class Sucursal {
     public void setUbicacion(String ubicacion){
         this.ubicacion = ubicacion;
     }
+
+    public int getNoSucursal() {
+        return noSucursal;
+    }
+    
+    
     
 }
