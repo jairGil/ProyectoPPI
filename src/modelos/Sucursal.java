@@ -6,13 +6,14 @@
 package modelos;
 
 import excepciones.ExSucursal;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class Sucursal {
+public class Sucursal implements Serializable{
     private int noSucursal;
     private String ubicacion;
     private ArrayList<Sala> salas = new ArrayList();
