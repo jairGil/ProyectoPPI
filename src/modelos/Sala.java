@@ -7,13 +7,14 @@ package modelos;
 
 import excepciones.ExAsiento;
 import excepciones.ExSala;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class Sala {
+public class Sala implements Serializable{
     private int noSala;
     private int noAsientos;
     private int noFilas;
