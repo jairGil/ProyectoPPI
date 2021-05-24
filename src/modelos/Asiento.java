@@ -1,8 +1,9 @@
 package modelos;
 
 import excepciones.ExAsiento;
+import java.io.Serializable;
 
-public class Asiento {
+public class Asiento implements Serializable{
     
     private char fila;
     private int columna;
