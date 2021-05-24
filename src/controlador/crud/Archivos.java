@@ -18,6 +18,7 @@ public class Archivos {
                 // Escritura de un objeto en el archivo
                 oo.writeObject(datos);
                 // Cerrar el archivo
+                oo.close();
             }
         } catch (IOException e) {
             System.out.println("Error: " + e);
