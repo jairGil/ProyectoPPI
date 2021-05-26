@@ -32,6 +32,18 @@ public class Asiento implements Serializable{
             throw new ExAsiento("Número de columnas inválido");
         this.columna = columna;
     }
+
+    public char getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public boolean isOcupado() {
+        return ocupado;
+    }
     
     
     
