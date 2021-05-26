@@ -74,6 +74,34 @@ public class Sala implements Serializable{
             throw new ExSala("Costo de boleto inválido");
         this.costoBoleto = costoBoleto;
     }
+
+    public int getNoSala() {
+        return noSala;
+    }
+
+    public int getNoAsientos() {
+        return noAsientos;
+    }
+
+    public int getNoFilas() {
+        return noFilas;
+    }
+
+    public int getNoColumnas() {
+        return noColumnas;
+    }
+
+    public ArrayList<Asiento> getRegistroAsientos() {
+        return registroAsientos;
+    }
+
+    public boolean isLleno() {
+        return lleno;
+    }
+
+    public float getCostoBoleto() {
+        return costoBoleto;
+    }
     
     
     
