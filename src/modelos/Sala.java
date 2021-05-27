@@ -7,13 +7,14 @@ package modelos;
 
 import excepciones.ExAsiento;
 import excepciones.ExSala;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Dell
  */
-public class Sala {
+public class Sala implements Serializable{
     private int noSala;
     private int noAsientos;
     private int noFilas;
@@ -72,6 +73,34 @@ public class Sala {
         if(costoBoleto <= 0)
             throw new ExSala("Costo de boleto inválido");
         this.costoBoleto = costoBoleto;
+    }
+
+    public int getNoSala() {
+        return noSala;
+    }
+
+    public int getNoAsientos() {
+        return noAsientos;
+    }
+
+    public int getNoFilas() {
+        return noFilas;
+    }
+
+    public int getNoColumnas() {
+        return noColumnas;
+    }
+
+    public ArrayList<Asiento> getRegistroAsientos() {
+        return registroAsientos;
+    }
+
+    public boolean isLleno() {
+        return lleno;
+    }
+
+    public float getCostoBoleto() {
+        return costoBoleto;
     }
     
     

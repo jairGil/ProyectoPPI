@@ -1,8 +1,9 @@
 package modelos;
 
 import excepciones.ExAsiento;
+import java.io.Serializable;
 
-public class Asiento {
+public class Asiento implements Serializable{
     
     private char fila;
     private int columna;
@@ -30,6 +31,18 @@ public class Asiento {
         if(columna <= 0)
             throw new ExAsiento("Número de columnas inválido");
         this.columna = columna;
+    }
+
+    public char getFila() {
+        return fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public boolean isOcupado() {
+        return ocupado;
     }
     
     
