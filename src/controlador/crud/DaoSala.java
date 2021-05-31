@@ -6,6 +6,8 @@
 package controlador.crud;
 
 import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelos.Sala;
 
 /**
@@ -14,6 +16,7 @@ import modelos.Sala;
  */
 public class DaoSala implements ISala{
     ArrayList<Sala> salas = new ArrayList();
+    
     public void crearSala(Sala s) {
         salas = Archivos.leerObjeto("Salas.dat");
         salas.add(s);
@@ -41,5 +44,20 @@ public class DaoSala implements ISala{
         if(!b){
             throw new RuntimeException("No se encontró la sala indicada");
         }
+    }
+    
+    public void mostrarSala(JTable tSal, String[] columnas, int n){
+        DefaultTableModel model;
+        model = new DefaultTableModel(null, columnas);
+        String[] filas = new String[n];
+        salas = Archivos.leerObjeto("Salas.dat");
+        for(Sala s : salas){
+            filas[0] = s.getNoSala()+"";
+            filas[1] = s.getNoAsientos()+"";
+            filas[2] = s.getCostoBoleto()+"";
+            model.addRow(filas);
+        }
+        
+        tSal.setModel(model);
     }
 }
