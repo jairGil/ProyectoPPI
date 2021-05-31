@@ -14,25 +14,29 @@ import modelos.Sala;
  *
  * @author temaz
  */
-public class DaoSala implements ISala{
+public class DaoSala implements IDao<Sala>{
     ArrayList<Sala> salas = new ArrayList();
     
-    public void crearSala(Sala s) {
+    @Override
+    public void crear(Sala s) {
         salas = Archivos.leerObjeto("Salas.dat");
         salas.add(s);
         Archivos.escribirObjeto(salas,"Salas.dat");
     }
     
-    public ArrayList<Sala> leerSala() {
+    @Override
+    public ArrayList<Sala> leer() {
         salas = Archivos.leerObjeto("Salas.dat");
         return salas;
     }  
     
-    public void actualizarSala(ArrayList<Sala> s) {
+    @Override
+    public void actualizar(ArrayList<Sala> s) {
         Archivos.escribirObjeto(s,"Salas.dat");
     }
     
-    public void eliminarSala(ArrayList<Sala> sl, Sala sa){
+    @Override
+    public void eliminar(ArrayList<Sala> sl, Sala sa){
         int i;
         boolean b=false;
         for(i=0;i<sl.size();i++){
@@ -46,7 +50,8 @@ public class DaoSala implements ISala{
         }
     }
     
-    public void mostrarSala(JTable tSal, String[] columnas, int n){
+    @Override
+    public void mostrar(JTable tSal, String[] columnas, int n){
         DefaultTableModel model;
         model = new DefaultTableModel(null, columnas);
         String[] filas = new String[n];
