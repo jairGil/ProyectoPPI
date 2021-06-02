@@ -46,8 +46,21 @@ public class CtrlSala {
             }catch(ExAsiento | ExSala ex){
                 JOptionPane.showMessageDialog(ps, "Error al agregar sala.");
             }
-            
-            
+        }
+    }
+    
+    public void eliminarSala(ActionEvent ae){
+        
+        if(this.ps.getNoSalaE().isEmpty()){
+            JOptionPane.showMessageDialog(ps, "Ingrese en número de sala.");
+        }else{
+            try{
+                int ns = Integer.parseInt(this.ps.getNoSalaE());
+                daosala.eliminar(ns);
+                
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog(ps, "Error al eliminar sala.");
+            }
         }
     }
 }

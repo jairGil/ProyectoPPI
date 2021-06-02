@@ -36,18 +36,21 @@ public class DaoSala implements IDao<Sala>{
     }
     
     @Override
-    public void eliminar(ArrayList<Sala> sl, Sala sa){
-        int i;
-        boolean b=false;
-        for(i=0;i<sl.size();i++){
-            if(sl.get(i).getNoSala()==sa.getNoSala()){
-                sl.remove(i);
-                b=true;
+    public void eliminar(int numSala){
+        salas = Archivos.leerObjeto("Salas.dat");
+        boolean b = false;
+        
+        for(int i = 0; i<salas.size(); i++){
+            if(salas.get(i).getNoSala() == numSala){
+                salas.remove(i);
+                b = true;
+                break;
             }
         }
         if(!b){
             throw new RuntimeException("No se encontró la sala indicada");
         }
+        Archivos.escribirObjeto(salas,"Salas.dat");
     }
     
     @Override

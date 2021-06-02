@@ -17,6 +17,6 @@ public interface IDao<T> {
     void crear(T t);
     ArrayList<T> leer();
     void actualizar(ArrayList<T> tl);
-    void eliminar(ArrayList<T> tl, T t);
+    void eliminar(int num);
     void mostrar(JTable tabla, String[] columnas, int n);
 }
