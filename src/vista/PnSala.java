@@ -8,6 +8,7 @@ package vista;
 import controlador.CtrlSala;
 import javax.swing.JTextField;
 
+
 /**
  *
  * @author Dell
@@ -54,18 +55,18 @@ public class PnSala extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        txtNoSalaE = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
+        txtNoSalaE = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
         txtNoSalaC = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        btnConsultar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -104,14 +105,14 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel8.setFont(Estilos.FUENTE_LBL);
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Número de sala");
 
         txtNoSalaM.setBackground(new java.awt.Color(255, 255, 255));
         txtNoSalaM.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel10.setFont(Estilos.FUENTE_LBL);
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Número de asientos");
 
@@ -123,11 +124,11 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel16.setFont(Estilos.FUENTE_LBL);
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Asientos");
 
-        jLabel17.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel17.setFont(Estilos.FUENTE_LBL);
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Costo por boleto");
 
@@ -149,6 +150,10 @@ public class PnSala extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 79, Short.MAX_VALUE)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -166,20 +171,16 @@ public class PnSala extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jCheckBox1))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
+                        .addGap(307, 307, 307)
                         .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 79, Short.MAX_VALUE)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel7)
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
@@ -199,7 +200,7 @@ public class PnSala extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBox1))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addContainerGap(421, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificaciones", jPanel3);
@@ -219,9 +220,6 @@ public class PnSala extends javax.swing.JPanel {
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Número de sala");
 
-        txtNoSalaE.setBackground(new java.awt.Color(255, 255, 255));
-        txtNoSalaE.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-
         btnEliminar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -234,43 +232,60 @@ public class PnSala extends javax.swing.JPanel {
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("SALAS");
 
+        txtNoSalaE.setBackground(new java.awt.Color(51, 51, 51));
+        txtNoSalaE.setFont(FUENTE_TXT);
+        txtNoSalaE.setForeground(new java.awt.Color(204, 204, 204));
+        txtNoSalaE.setBorder(BORDE_GRIS);
+        txtNoSalaE.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNoSalaE.setDoubleBuffered(true);
+        txtNoSalaE.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNoSalaEFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNoSalaEFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
-                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(150, 150, 150))
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(286, 286, 286)
-                        .addComponent(btnEliminar))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(jLabel24))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNoSalaE, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                            .addComponent(jLabel26))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(btnEliminar)
+                            .addGap(311, 311, 311))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(txtNoSalaE, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(260, 260, 260)))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel26)
-                .addGap(4, 4, 4)
-                .addComponent(txtNoSalaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNoSalaE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addContainerGap(489, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminaciones", jPanel4);
@@ -318,19 +333,24 @@ public class PnSala extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
-
         txtNoSalaC.setBackground(new java.awt.Color(255, 255, 255));
         txtNoSalaC.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
 
-        jLabel14.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel14.setFont(Estilos.FUENTE_LBL);
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Número de sala");
 
-        jLabel25.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel25.setFont(Estilos.FUENTE_TITULOS);
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("SALAS");
+
+        btnConsultar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -351,19 +371,19 @@ public class PnSala extends javax.swing.JPanel {
                         .addGap(80, 80, 80)
                         .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(291, 291, 291)
+                        .addComponent(btnConsultar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(302, 302, 302)
+                        .addGap(309, 309, 309)
                         .addComponent(jLabel25)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel14)
@@ -373,9 +393,9 @@ public class PnSala extends javax.swing.JPanel {
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(144, 144, 144)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(btnConsultar)
+                .addContainerGap(416, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consultas", jPanel2);
@@ -388,14 +408,14 @@ public class PnSala extends javax.swing.JPanel {
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("SALAS");
 
-        jLabel19.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel19.setFont(Estilos.FUENTE_LBL);
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Número de sala");
 
         txtNoSala.setBackground(new java.awt.Color(255, 255, 255));
         txtNoSala.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
 
-        jLabel20.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel20.setFont(Estilos.FUENTE_LBL);
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Número de asientos");
 
@@ -407,7 +427,7 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel21.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel21.setFont(Estilos.FUENTE_LBL);
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Costo por boleto");
 
@@ -419,7 +439,7 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel22.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel22.setFont(Estilos.FUENTE_LBL);
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Número de filas");
 
@@ -431,7 +451,7 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel23.setFont(Estilos.FUENTE_LBL);
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Número de columnas");
 
@@ -443,7 +463,7 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        btnGuardar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        btnGuardar.setFont(Estilos.FUENTE_LBL);
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -480,23 +500,24 @@ public class PnSala extends javax.swing.JPanel {
                                 .addComponent(btnGuardar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(237, 237, 237)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(jLabel18)))
-                .addContainerGap(271, Short.MAX_VALUE))
+                        .addComponent(jLabel9)))
+                .addContainerGap(274, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(309, 309, 309))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel18)
-                        .addGap(262, 262, 262)
+                        .addGap(334, 334, 334)
                         .addComponent(jLabel11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel18)
+                        .addGap(48, 48, 48)
                         .addComponent(jLabel19)
                         .addGap(4, 4, 4)
                         .addComponent(txtNoSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -581,6 +602,18 @@ public class PnSala extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
 
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void txtNoSalaEFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNoSalaEFocusGained
+        txtNoSalaE.setBorder(Estilos.BORDE_ROJO);
+    }//GEN-LAST:event_txtNoSalaEFocusGained
+
+    private void txtNoSalaEFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNoSalaEFocusLost
+        txtNoSalaE.setBorder(Estilos.BORDE_GRIS);
+    }//GEN-LAST:event_txtNoSalaEFocusLost
+
     public String getCostoBoleto() {
         return txtCostoBoleto.getText();
     }
@@ -610,9 +643,9 @@ public class PnSala extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;

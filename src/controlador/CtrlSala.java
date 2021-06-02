@@ -63,4 +63,9 @@ public class CtrlSala {
             }
         }
     }
+    
+    public void modificarSala(ActionEvent ae){
+        
+        
+    }
 }
