@@ -2,6 +2,7 @@ package modelos;
 
 import excepciones.ExEmpleado;
 import excepciones.ExPersona;
+import java.util.ArrayList;
 
 public class Cajero extends Empleado {
 
@@ -15,4 +16,6 @@ public class Cajero extends Empleado {
         super(e.getNoTelefono(), e.getSalario(), e.getNombre(), e.getApellidoPaterno(), e.getApellidoMaterno());
     }
             
+    
+    ArrayList<Boleto> boleto= new ArrayList<Boleto>();
 }
