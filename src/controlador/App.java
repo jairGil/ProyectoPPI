@@ -1,11 +1,11 @@
 package controlador;
 
-import vista.FrmInicio;
+import vista.FrmLogin;
 
 public class App {
     
     public static void main(String[] args) {
-        FrmInicio app = new FrmInicio();
+        FrmLogin app = new FrmLogin();
         app.setVisible(true);
     }
 }
