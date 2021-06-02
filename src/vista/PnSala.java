@@ -6,7 +6,7 @@
 package vista;
 
 import controlador.CtrlSala;
-import javax.swing.JTextField;
+import static vista.Estilos.*;
 
 
 /**
