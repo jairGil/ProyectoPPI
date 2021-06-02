@@ -10,6 +10,7 @@ package vista;
  * @author salas
  */
 public class Estilos {
+    public static final java.awt.Color BACKGROUND = new java.awt.Color(51, 51, 51);
     public static final java.awt.Color ROJO = new java.awt.Color(200, 0, 0);
     public static final java.awt.Color ROJO_OBS = new java.awt.Color(150, 0, 0);
     public static final java.awt.Color GRIS = new java.awt.Color(102, 102, 102);
