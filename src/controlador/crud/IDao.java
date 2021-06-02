@@ -16,7 +16,8 @@ import modelos.Sala;
 public interface IDao<T> {
     void crear(T t);
     ArrayList<T> leer();
+    //void consultar(JTable tabla, String[] columnas, int n, int numT);
     void actualizar(ArrayList<T> tl);
     void eliminar(int num);
-    void mostrar(JTable tabla, String[] columnas, int n);
+    //void mostrar(JTable tabla, String[] columnas, int n);
 }

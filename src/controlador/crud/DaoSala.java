@@ -30,6 +30,26 @@ public class DaoSala implements IDao<Sala>{
         return salas;
     }  
     
+    public void consultar(JTable tSal, String[] columnas, int n, int numT){
+        DefaultTableModel model;
+        model = new DefaultTableModel(null, columnas);
+        String[] filas = new String[n];
+        salas = Archivos.leerObjeto("Salas.dat");
+        for(Sala s : salas){
+            if(numT == s.getNoSala()){
+                filas[0] = s.getNoSala()+"";
+                filas[1] = s.getNoAsientos()+"";
+                filas[2] = s.getCostoBoleto()+"";
+                filas[3] = s.getNoFilas()+"";
+                filas[4] = s.getNoColumnas()+"";
+                model.addRow(filas);
+                break;
+            }
+        }
+        
+        tSal.setModel(model);
+    }
+    
     @Override
     public void actualizar(ArrayList<Sala> s) {
         Archivos.escribirObjeto(s,"Salas.dat");
@@ -53,7 +73,7 @@ public class DaoSala implements IDao<Sala>{
         Archivos.escribirObjeto(salas,"Salas.dat");
     }
     
-    @Override
+    
     public void mostrar(JTable tSal, String[] columnas, int n){
         DefaultTableModel model;
         model = new DefaultTableModel(null, columnas);
@@ -63,6 +83,8 @@ public class DaoSala implements IDao<Sala>{
             filas[0] = s.getNoSala()+"";
             filas[1] = s.getNoAsientos()+"";
             filas[2] = s.getCostoBoleto()+"";
+            filas[3] = s.getNoFilas()+"";
+            filas[4] = s.getNoColumnas()+"";
             model.addRow(filas);
         }
         

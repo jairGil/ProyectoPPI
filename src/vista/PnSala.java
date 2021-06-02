@@ -20,7 +20,7 @@ public class PnSala extends javax.swing.JPanel {
      */
     
     private CtrlSala ctrlsala;
-    
+    String[] cols = {"No. Sala","No. Asientos","Costo Boleto","No. Filas","No. Columnas"};
     public PnSala() {
         initComponents();
     }
@@ -52,17 +52,18 @@ public class PnSala extends javax.swing.JPanel {
         txtCostoBoletoM = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
+        btnModificar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jTextField12 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
-        txtNoSalaE = new javax.swing.JTextField();
+        txtNoSalaB = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tbSalaC = new javax.swing.JTable();
         txtNoSalaC = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -90,9 +91,9 @@ public class PnSala extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel7.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel7.setFont(Estilos.FUENTE_TITULOS);
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("SALAS");
+        jLabel7.setText("SALAS - MODIFICACIONES");
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,6 +147,14 @@ public class PnSala extends javax.swing.JPanel {
         jCheckBox1.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jCheckBox1.setText("Ocupado");
 
+        btnModificar.setFont(Estilos.FUENTE_LBL);
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -174,6 +183,11 @@ public class PnSala extends javax.swing.JPanel {
                         .addGap(307, 307, 307)
                         .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(330, 330, 330)
+                    .addComponent(btnModificar)
+                    .addContainerGap(323, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +214,12 @@ public class PnSala extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCheckBox1))
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addContainerGap(454, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(380, 380, 380)
+                    .addComponent(btnModificar)
+                    .addContainerGap(380, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Modificaciones", jPanel3);
@@ -216,11 +235,11 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel26.setFont(Estilos.FUENTE_LBL);
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Número de sala");
 
-        btnEliminar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        btnEliminar.setFont(Estilos.FUENTE_LBL);
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,49 +247,37 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel24.setFont(Estilos.FUENTE_TITULOS);
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("SALAS");
+        jLabel24.setText("SALAS - BAJAS");
 
-        txtNoSalaE.setBackground(new java.awt.Color(51, 51, 51));
-        txtNoSalaE.setFont(FUENTE_TXT);
-        txtNoSalaE.setForeground(new java.awt.Color(204, 204, 204));
-        txtNoSalaE.setBorder(BORDE_GRIS);
-        txtNoSalaE.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNoSalaE.setDoubleBuffered(true);
-        txtNoSalaE.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtNoSalaEFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtNoSalaEFocusLost(evt);
-            }
-        });
+        txtNoSalaB.setBackground(new java.awt.Color(255, 255, 255));
+        txtNoSalaB.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(135, Short.MAX_VALUE))
+                        .addGap(113, 113, 113)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(btnEliminar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(280, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(btnEliminar)
-                            .addGap(311, 311, 311))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                            .addComponent(txtNoSalaE, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(260, 260, 260)))))
+                    .addComponent(txtNoSalaB, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(282, 282, 282))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,16 +286,16 @@ public class PnSala extends javax.swing.JPanel {
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel26)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNoSalaE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtNoSalaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(btnEliminar)
-                .addContainerGap(489, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Eliminaciones", jPanel4);
+        jTabbedPane1.addTab("BAJAS", jPanel4);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -303,35 +310,20 @@ public class PnSala extends javax.swing.JPanel {
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        jLabel15.setFont(Estilos.FUENTE_LBL);
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Salas:");
+        jLabel15.setText("Resultados:");
 
-        jTable3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tbSalaC.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        tbSalaC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "No. de sala", "No. de asientos", "No. de filas", "No. de columnas", "Costo de boleto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable3);
+        ));
+        jScrollPane3.setViewportView(tbSalaC);
 
         txtNoSalaC.setBackground(new java.awt.Color(255, 255, 255));
         txtNoSalaC.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
@@ -342,9 +334,9 @@ public class PnSala extends javax.swing.JPanel {
 
         jLabel25.setFont(Estilos.FUENTE_TITULOS);
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("SALAS");
+        jLabel25.setText("SALAS - CONSULTAS");
 
-        btnConsultar.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        btnConsultar.setFont(Estilos.FUENTE_LBL);
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,7 +387,7 @@ public class PnSala extends javax.swing.JPanel {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(btnConsultar)
-                .addContainerGap(416, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consultas", jPanel2);
@@ -404,9 +396,9 @@ public class PnSala extends javax.swing.JPanel {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
-        jLabel18.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel18.setFont(Estilos.FUENTE_TITULOS);
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("SALAS");
+        jLabel18.setText("SALAS - ALTAS");
 
         jLabel19.setFont(Estilos.FUENTE_LBL);
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -544,7 +536,7 @@ public class PnSala extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Registro", jPanel1);
+        jTabbedPane1.addTab("ALTAS", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -603,16 +595,12 @@ public class PnSala extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+        this.ctrlsala.consultarSala(evt, tbSalaC, cols);
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void txtNoSalaEFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNoSalaEFocusGained
-        txtNoSalaE.setBorder(Estilos.BORDE_ROJO);
-    }//GEN-LAST:event_txtNoSalaEFocusGained
-
-    private void txtNoSalaEFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNoSalaEFocusLost
-        txtNoSalaE.setBorder(Estilos.BORDE_GRIS);
-    }//GEN-LAST:event_txtNoSalaEFocusLost
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     public String getCostoBoleto() {
         return txtCostoBoleto.getText();
@@ -634,8 +622,12 @@ public class PnSala extends javax.swing.JPanel {
         return txtNoSala.getText();
     }
 
-    public String getNoSalaE() {
-        return txtNoSalaE.getText();
+    public String getNoSalaB() {
+        return txtNoSalaB.getText();
+    }
+    
+    public String getNoSalaC() {
+        return txtNoSalaC.getText();
     }
     
     public void setCtrl(CtrlSala ctrl) {
@@ -646,6 +638,7 @@ public class PnSala extends javax.swing.JPanel {
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
@@ -672,19 +665,19 @@ public class PnSala extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTable tbSalaC;
     private javax.swing.JTextField txtCostoBoleto;
     private javax.swing.JTextField txtCostoBoletoM;
     private javax.swing.JTextField txtNoAsientos;
     private javax.swing.JTextField txtNoCol;
     private javax.swing.JTextField txtNoFilas;
     private javax.swing.JTextField txtNoSala;
+    private javax.swing.JTextField txtNoSalaB;
     private javax.swing.JTextField txtNoSalaC;
-    private javax.swing.JTextField txtNoSalaE;
     private javax.swing.JTextField txtNoSalaM;
     // End of variables declaration//GEN-END:variables
 
