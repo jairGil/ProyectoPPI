@@ -1,11 +1,17 @@
 package vista;
 
+import controlador.ControlInicio;
 import javax.swing.UIManager;
 import static vista.Estilos.*;
 
 public class FrmPrincipal extends javax.swing.JFrame {
+    
+    private final ControlInicio control;
+    private final FrmLogin ventana;
 
-    public FrmPrincipal() {
+    public FrmPrincipal(ControlInicio control, FrmLogin ventana) {
+        this.control = control;
+        this.ventana = ventana;
         initEstilos();
         initComponents();
     }
@@ -23,9 +29,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         PnlEncabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jSplitPane1.setBorder(null);
         jSplitPane1.setDividerLocation(200);
@@ -125,13 +136,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     * 
-     */
-    public static void main(String args[]) {
-        new FrmPrincipal().setVisible(true);
-    }
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        control.intercambiaVista(ventana);
+    }//GEN-LAST:event_formWindowClosing
     
     private void initEstilos() {
         UIManager.put("ToggleButton.font", FUENTE_LBL);

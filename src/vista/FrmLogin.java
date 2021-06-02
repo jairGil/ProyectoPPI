@@ -1,10 +1,16 @@
 package vista;
 
+import controlador.ControlInicio;
 import static vista.Estilos.*;
 
 public class FrmLogin extends javax.swing.JFrame {
     
-    public FrmLogin() {
+    private final ControlInicio control;
+    private final FrmPrincipal frmPrincipal;
+    
+    public FrmLogin(ControlInicio control) {
+        this.control = control;
+        this.frmPrincipal = new FrmPrincipal(control, this);
         initComponents();
     }
    
@@ -193,7 +199,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIngresarMouseExited
 
     private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
-        // TODO add your handling code here:
+        control.intercambiaVista(frmPrincipal);
     }//GEN-LAST:event_btnIngresarMouseClicked
 
     private void lblRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistroMouseClicked
