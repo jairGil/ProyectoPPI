@@ -10,6 +10,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Dell
+ * @param <T>
  */
 public interface IGen<T>{
     void crearT(T o,String n);
