@@ -14,7 +14,7 @@ public class Estilos {
     // Fuentes y color de fuente
     public static final java.awt.Color FG_COLOR = new java.awt.Color(255, 255, 255);
     public static final java.awt.Color GRIS_CLARO = new java.awt.Color(102, 102, 102);
-    public static final java.awt.Font FUENTE_TITULOS = new java.awt.Font("Yu Gothic UI", 0, 28);
+    public static final java.awt.Font FUENTE_TITULOS = new java.awt.Font("Yu Gothic UI", 0, 30);
     public static final java.awt.Font FUENTE_LBL = new java.awt.Font("Yu Gothic UI", 0, 18);
     public static final java.awt.Font FUENTE_TXT = new java.awt.Font("Yu Gothic UI Light", 0, 14);
     
