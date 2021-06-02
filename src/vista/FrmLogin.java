@@ -26,7 +26,7 @@ public class FrmLogin extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 51, 51));
         setLocation(new java.awt.Point(0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(GRIS_BG);
 
         lblImgUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblImgUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/user.png"))); // NOI18N
@@ -89,7 +89,7 @@ public class FrmLogin extends javax.swing.JFrame {
         });
 
         lblRegistro.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
-        lblRegistro.setForeground(GRIS);
+        lblRegistro.setForeground(GRIS_CLARO);
         lblRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRegistro.setText("Registrarse");
         lblRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -181,7 +181,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRegistroMouseEntered
 
     private void lblRegistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistroMouseExited
-        lblRegistro.setForeground(GRIS);
+        lblRegistro.setForeground(GRIS_CLARO);
     }//GEN-LAST:event_lblRegistroMouseExited
 
     private void btnIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseEntered
