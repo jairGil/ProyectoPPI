@@ -13,6 +13,8 @@ import static vista.Estilos.FUENTE_LBL;
 import static vista.Estilos.FUENTE_TITULOS;
 import static vista.Estilos.FUENTE_TXT;
 import static vista.Estilos.GRIS_BG;
+import static vista.Estilos.ROJO;
+import static vista.Estilos.ROJO_OBS;
 
 /**
  *
@@ -82,14 +84,14 @@ public class PnSucursal extends javax.swing.JPanel {
         lblUbicacion3 = new javax.swing.JLabel();
         txtUbicacion3 = new javax.swing.JTextField();
         lblNumSalas = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnRegSalas = new javax.swing.JButton();
+        txtNumSalas = new javax.swing.JTextField();
+        lblNumEmps = new javax.swing.JLabel();
+        txtNumEmps = new javax.swing.JTextField();
+        btnRegEmps = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        btnGuardar2 = new javax.swing.JButton();
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setForeground(FG_COLOR);
@@ -118,7 +120,7 @@ public class PnSucursal extends javax.swing.JPanel {
 
         txtNumSucursal1.setBackground(GRIS_BG);
         txtNumSucursal1.setFont(FUENTE_TXT);
-        txtNumSucursal1.setForeground(new java.awt.Color(204, 204, 204));
+        txtNumSucursal1.setForeground(FG_COLOR);
         txtNumSucursal1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNumSucursal1FocusGained(evt);
@@ -134,6 +136,7 @@ public class PnSucursal extends javax.swing.JPanel {
 
         txtUbicacion1.setBackground(GRIS_BG);
         txtUbicacion1.setFont(FUENTE_TXT);
+        txtUbicacion1.setForeground(FG_COLOR);
         txtUbicacion1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtUbicacion1FocusGained(evt);
@@ -247,10 +250,17 @@ public class PnSucursal extends javax.swing.JPanel {
         });
         jScrollPane6.setViewportView(tblSalas1);
 
+        btnGuardar1.setBackground(ROJO);
         btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
 
         lblIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
+        btnBuscar1.setBackground(ROJO);
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
 
         javax.swing.GroupLayout pnModificacionesLayout = new javax.swing.GroupLayout(pnModificaciones);
@@ -278,25 +288,27 @@ public class PnSucursal extends javax.swing.JPanel {
             .addGroup(pnModificacionesLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNumSucursal1)
                     .addGroup(pnModificacionesLayout.createSequentialGroup()
                         .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNumSucursal1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUbicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUbicacion1)
-                            .addComponent(lblEmpleados1))
+                            .addComponent(lblUbicacion1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(61, 61, 61))
+                        .addComponent(btnBuscar1)
+                        .addGap(71, 71, 71))
+                    .addGroup(pnModificacionesLayout.createSequentialGroup()
+                        .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNumSucursal1)
+                            .addComponent(lblEmpleados1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(pnModificacionesLayout.createSequentialGroup()
-                .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnModificacionesLayout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnModificacionesLayout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(lblIcono1)))
+                .addGap(295, 295, 295)
+                .addComponent(btnGuardar1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnModificacionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblIcono1)
+                .addGap(251, 251, 251))
         );
         pnModificacionesLayout.setVerticalGroup(
             pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,29 +320,29 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNumSucursal1)
                 .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnModificacionesLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))
                     .addGroup(pnModificacionesLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(txtNumSucursal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblUbicacion1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUbicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblEmpleados1)))
+                        .addGap(10, 10, 10)
+                        .addComponent(txtUbicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnModificacionesLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(btnBuscar1)))
+                .addGap(18, 18, 18)
+                .addComponent(lblEmpleados1)
+                .addGap(6, 6, 6)
                 .addComponent(tbdpnEmpleados1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSalas1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar1)
                 .addGap(18, 18, 18)
                 .addComponent(lblIcono1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Modificaciones", pnModificaciones);
@@ -485,7 +497,7 @@ public class PnSucursal extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(tblSalas2);
 
-        btnBuscar2.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscar2.setBackground(ROJO);
         btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
 
         lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
@@ -494,6 +506,10 @@ public class PnSucursal extends javax.swing.JPanel {
         pnConsultas.setLayout(pnConsultasLayout);
         pnConsultasLayout.setHorizontalGroup(
             pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnConsultasLayout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(lblIcono2)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnConsultasLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -506,8 +522,8 @@ public class PnSucursal extends javax.swing.JPanel {
                             .addComponent(lblUbicacion2)
                             .addComponent(txtUbicacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                        .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))))
+                        .addComponent(btnBuscar2)
+                        .addGap(74, 74, 74))))
             .addGroup(pnConsultasLayout.createSequentialGroup()
                 .addGroup(pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnConsultasLayout.createSequentialGroup()
@@ -522,10 +538,6 @@ public class PnSucursal extends javax.swing.JPanel {
                         .addGap(153, 153, 153)
                         .addComponent(txtInfo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnConsultasLayout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(lblIcono2)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnConsultasLayout.setVerticalGroup(
             pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -544,7 +556,9 @@ public class PnSucursal extends javax.swing.JPanel {
                         .addComponent(lblUbicacion2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtUbicacion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnConsultasLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(btnBuscar2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEmpleados2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -581,33 +595,47 @@ public class PnSucursal extends javax.swing.JPanel {
 
         txtUbicacion3.setBackground(GRIS_BG);
         txtUbicacion3.setFont(FUENTE_TXT);
+        txtUbicacion3.setForeground(FG_COLOR);
 
-        lblNumSalas.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 10)); // NOI18N
-        lblNumSalas.setForeground(new java.awt.Color(255, 255, 255));
+        lblNumSalas.setFont(FUENTE_LBL);
+        lblNumSalas.setForeground(FG_COLOR);
         lblNumSalas.setText("Número de salas:");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Registro de salas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegSalas.setBackground(ROJO);
+        btnRegSalas.setFont(FUENTE_LBL);
+        btnRegSalas.setForeground(FG_COLOR);
+        btnRegSalas.setText("Registro de salas");
+        btnRegSalas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegSalasActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Número de empleados:");
+        txtNumSalas.setBackground(GRIS_BG);
+        txtNumSalas.setFont(FUENTE_TXT);
+        txtNumSalas.setForeground(FG_COLOR);
 
-        jButton2.setText("Registro de empleados");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        lblNumEmps.setFont(FUENTE_LBL);
+        lblNumEmps.setForeground(FG_COLOR);
+        lblNumEmps.setText("Número de empleados:");
+
+        txtNumEmps.setBackground(GRIS_BG);
+        txtNumEmps.setFont(FUENTE_TXT);
+        txtNumEmps.setForeground(FG_COLOR);
+
+        btnRegEmps.setBackground(ROJO);
+        btnRegEmps.setFont(FUENTE_LBL);
+        btnRegEmps.setForeground(FG_COLOR);
+        btnRegEmps.setText("Registro de empleados");
+        btnRegEmps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegEmpsActionPerformed(evt);
             }
         });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
+        btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
 
         javax.swing.GroupLayout pnRegistroLayout = new javax.swing.GroupLayout(pnRegistro);
         pnRegistro.setLayout(pnRegistroLayout);
@@ -624,29 +652,29 @@ public class PnSucursal extends javax.swing.JPanel {
                             .addComponent(txtUbicacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnRegistroLayout.createSequentialGroup()
-                                    .addComponent(jLabel5)
+                                    .addComponent(lblNumEmps)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumEmps, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btnRegEmps, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnRegistroLayout.createSequentialGroup()
                                     .addComponent(lblNumSalas)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumSalas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jButton1)))))
+                                    .addComponent(btnRegSalas)))))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
                         .addGap(237, 237, 237)
                         .addComponent(jLabel9))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jLabel11))
-                    .addGroup(pnRegistroLayout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnRegistroLayout.createSequentialGroup()
                         .addGap(300, 300, 300)
-                        .addComponent(lblTitulo3)))
+                        .addComponent(lblTitulo3))
+                    .addGroup(pnRegistroLayout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(btnGuardar2))
+                    .addGroup(pnRegistroLayout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jLabel11)))
                 .addContainerGap(192, Short.MAX_VALUE))
         );
         pnRegistroLayout.setVerticalGroup(
@@ -665,18 +693,18 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumSalas)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegSalas)
+                    .addComponent(txtNumSalas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addGap(45, 45, 45)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                    .addComponent(lblNumEmps)
+                    .addComponent(txtNumEmps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegEmps))
+                .addGap(56, 56, 56)
+                .addComponent(btnGuardar2)
+                .addGap(104, 104, 104)
                 .addComponent(jLabel11)
-                .addGap(328, 328, 328)
+                .addGap(276, 276, 276)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -695,13 +723,13 @@ public class PnSucursal extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegSalasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegSalasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegEmpsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegEmpsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRegEmpsActionPerformed
 
     private void txtUbicacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUbicacion1ActionPerformed
         // TODO add your handling code here:
@@ -740,6 +768,10 @@ public class PnSucursal extends javax.swing.JPanel {
         // TODO add your handling code here:
         txtNumSucursal2.setBorder(BORDE_ROJO);
     }//GEN-LAST:event_txtNumSucursal2FocusGained
+
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
     
     private void txtNumSucursal2FocusLost(java.awt.event.FocusEvent evt) {                                            
         // TODO add your handling code here:
@@ -776,15 +808,38 @@ public class PnSucursal extends javax.swing.JPanel {
         txtUbicacion3.setBorder(BORDE_GRIS);
     }
     
+    private void btnBuscar1MouseEntered(java.awt.event.MouseEvent evt) {                                         
+        btnBuscar1.setBackground(ROJO_OBS);
+    }                                        
+
+    private void btnBuscar1MouseExited(java.awt.event.MouseEvent evt) {                                        
+        btnBuscar1.setBackground(ROJO);
+    } 
+    
+    private void btnBuscar2MouseEntered(java.awt.event.MouseEvent evt) {                                         
+        btnBuscar2.setBackground(ROJO_OBS);
+    }                                        
+
+    private void btnBuscar2MouseExited(java.awt.event.MouseEvent evt) {                                        
+        btnBuscar2.setBackground(ROJO);
+    }
+    
+    private void btnGuardar1MouseEntered(java.awt.event.MouseEvent evt) {                                         
+        btnGuardar1.setBackground(ROJO_OBS);
+    }                                        
+
+    private void btnGuardar11MouseExited(java.awt.event.MouseEvent evt) {                                        
+        btnGuardar1.setBackground(ROJO);
+    } 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
     private javax.swing.JButton btnGuardar1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnGuardar2;
+    private javax.swing.JButton btnRegEmps;
+    private javax.swing.JButton btnRegSalas;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -794,12 +849,11 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblEmpleados1;
     private javax.swing.JLabel lblEmpleados2;
     private javax.swing.JLabel lblIcono1;
     private javax.swing.JLabel lblIcono2;
+    private javax.swing.JLabel lblNumEmps;
     private javax.swing.JLabel lblNumSalas;
     private javax.swing.JLabel lblNumSucursal1;
     private javax.swing.JLabel lblNumSucursal2;
@@ -825,6 +879,8 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JTable tblSalas2;
     private javax.swing.JTextField txtInfo1;
     private javax.swing.JTextField txtInfo2;
+    private javax.swing.JTextField txtNumEmps;
+    private javax.swing.JTextField txtNumSalas;
     private javax.swing.JTextField txtNumSucursal1;
     private javax.swing.JTextField txtNumSucursal2;
     private javax.swing.JTextField txtNumSucursal3;
