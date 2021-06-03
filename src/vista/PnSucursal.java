@@ -13,6 +13,7 @@ import static vista.Estilos.FUENTE_LBL;
 import static vista.Estilos.FUENTE_TITULOS;
 import static vista.Estilos.FUENTE_TXT;
 import static vista.Estilos.GRIS_BG;
+import static vista.Estilos.GRIS_SEL;
 import static vista.Estilos.ROJO;
 import static vista.Estilos.ROJO_OBS;
 
@@ -38,7 +39,7 @@ public class PnSucursal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tbdpnSucursales = new javax.swing.JTabbedPane();
         pnModificaciones = new javax.swing.JPanel();
         lblTitulo1 = new javax.swing.JLabel();
         txtInfo1 = new javax.swing.JTextField();
@@ -48,17 +49,35 @@ public class PnSucursal extends javax.swing.JPanel {
         txtUbicacion1 = new javax.swing.JTextField();
         lblEmpleados1 = new javax.swing.JLabel();
         tbdpnEmpleados1 = new javax.swing.JTabbedPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tblGerentes1 = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblCajeros1 = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblGerentes1 = new javax.swing.JTable();
         lblSalas1 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblSalas1 = new javax.swing.JTable();
         btnGuardar1 = new javax.swing.JButton();
         lblIcono1 = new javax.swing.JLabel();
         btnBuscar1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        pnEliminaciones = new javax.swing.JPanel();
+        lblTitulo4 = new javax.swing.JLabel();
+        txtInfo3 = new javax.swing.JTextField();
+        lblNumSucursal4 = new javax.swing.JLabel();
+        txtNumSucursal4 = new javax.swing.JTextField();
+        lblUbicacion4 = new javax.swing.JLabel();
+        txtUbicacion4 = new javax.swing.JTextField();
+        btnBuscar3 = new javax.swing.JButton();
+        lblEmpleados4 = new javax.swing.JLabel();
+        tbdpnEmpleados4 = new javax.swing.JTabbedPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblCajeros4 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblGerente4 = new javax.swing.JTable();
+        lblSalas4 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblSalas4 = new javax.swing.JTable();
+        btnEliminar = new javax.swing.JButton();
+        lblIcono4 = new javax.swing.JLabel();
         pnConsultas = new javax.swing.JPanel();
         lblTitulo2 = new javax.swing.JLabel();
         lblNumSucursal2 = new javax.swing.JLabel();
@@ -89,17 +108,16 @@ public class PnSucursal extends javax.swing.JPanel {
         lblNumEmps = new javax.swing.JLabel();
         txtNumEmps = new javax.swing.JTextField();
         btnRegEmps = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblIcono3 = new javax.swing.JLabel();
         btnGuardar2 = new javax.swing.JButton();
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane1.setForeground(FG_COLOR);
-        jTabbedPane1.setToolTipText("");
-        jTabbedPane1.setFont(FUENTE_LBL);
-        jTabbedPane1.addFocusListener(new java.awt.event.FocusAdapter() {
+        tbdpnSucursales.setBackground(new java.awt.Color(255, 255, 255));
+        tbdpnSucursales.setForeground(GRIS_SEL);
+        tbdpnSucursales.setToolTipText("");
+        tbdpnSucursales.setFont(FUENTE_LBL);
+        tbdpnSucursales.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTabbedPane1FocusGained(evt);
+                tbdpnSucursalesFocusGained(evt);
             }
         });
 
@@ -112,6 +130,7 @@ public class PnSucursal extends javax.swing.JPanel {
         txtInfo1.setEditable(false);
         txtInfo1.setBackground(new java.awt.Color(255, 255, 255));
         txtInfo1.setFont(FUENTE_LBL);
+        txtInfo1.setForeground(GRIS_SEL);
         txtInfo1.setText("Ingrese el número de sucursal para hacer la modificación de la misma");
 
         lblNumSucursal1.setFont(FUENTE_LBL);
@@ -158,36 +177,6 @@ public class PnSucursal extends javax.swing.JPanel {
         tbdpnEmpleados1.setForeground(FG_COLOR);
         tbdpnEmpleados1.setFont(FUENTE_LBL);
 
-        tblGerentes1.setBackground(GRIS_BG);
-        tblGerentes1.setFont(FUENTE_LBL);
-        tblGerentes1.setForeground(FG_COLOR);
-        tblGerentes1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Número de teléfono", "Salario"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane5.setViewportView(tblGerentes1);
-
-        tbdpnEmpleados1.addTab("Gerentes", jScrollPane5);
-
         tblCajeros1.setBackground(GRIS_BG);
         tblCajeros1.setFont(FUENTE_LBL);
         tblCajeros1.setForeground(FG_COLOR);
@@ -217,6 +206,36 @@ public class PnSucursal extends javax.swing.JPanel {
         jScrollPane4.setViewportView(tblCajeros1);
 
         tbdpnEmpleados1.addTab("Cajeros", jScrollPane4);
+
+        tblGerentes1.setBackground(GRIS_BG);
+        tblGerentes1.setFont(FUENTE_LBL);
+        tblGerentes1.setForeground(FG_COLOR);
+        tblGerentes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Número de teléfono", "Salario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tblGerentes1);
+
+        tbdpnEmpleados1.addTab("Gerentes", jScrollPane5);
 
         lblSalas1.setFont(FUENTE_LBL);
         lblSalas1.setForeground(FG_COLOR);
@@ -268,7 +287,7 @@ public class PnSucursal extends javax.swing.JPanel {
         pnModificacionesLayout.setHorizontalGroup(
             pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnModificacionesLayout.createSequentialGroup()
-                .addGap(0, 38, Short.MAX_VALUE)
+                .addGap(0, 46, Short.MAX_VALUE)
                 .addGroup(pnModificacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnModificacionesLayout.createSequentialGroup()
                         .addComponent(lblTitulo1)
@@ -345,20 +364,226 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Modificaciones", pnModificaciones);
+        tbdpnSucursales.addTab("Modificaciones", pnModificaciones);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 669, Short.MAX_VALUE)
+        lblTitulo4.setFont(FUENTE_LBL);
+        lblTitulo4.setForeground(FG_COLOR);
+        lblTitulo4.setText("Sucursales");
+
+        txtInfo3.setFont(FUENTE_LBL);
+        txtInfo3.setForeground(GRIS_SEL);
+        txtInfo3.setText("Ingrese el número de sucursal o su ubicación paara la eliminación de la misma");
+        txtInfo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInfo3ActionPerformed(evt);
+            }
+        });
+
+        lblNumSucursal4.setFont(FUENTE_LBL);
+        lblNumSucursal4.setForeground(FG_COLOR);
+        lblNumSucursal4.setText("Número de Sucursal:");
+
+        txtNumSucursal4.setBackground(GRIS_BG);
+        txtNumSucursal4.setFont(FUENTE_TXT);
+        txtNumSucursal4.setForeground(FG_COLOR);
+
+        lblUbicacion4.setFont(FUENTE_LBL);
+        lblUbicacion4.setForeground(FG_COLOR);
+        lblUbicacion4.setText("Ubicación:");
+
+        txtUbicacion4.setBackground(GRIS_BG);
+        txtUbicacion4.setFont(FUENTE_TXT);
+        txtUbicacion4.setForeground(FG_COLOR);
+
+        btnBuscar3.setBackground(ROJO);
+        btnBuscar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
+
+        lblEmpleados4.setFont(FUENTE_LBL);
+        lblEmpleados4.setForeground(FG_COLOR);
+        lblEmpleados4.setText("Empleados:");
+
+        tblCajeros4.setBackground(GRIS_BG);
+        tblCajeros4.setFont(FUENTE_LBL);
+        tblCajeros4.setForeground(FG_COLOR);
+        tblCajeros4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Número de Teléfono", "Salario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tblCajeros4);
+
+        tbdpnEmpleados4.addTab("Cajeros", jScrollPane7);
+
+        tblGerente4.setBackground(GRIS_BG);
+        tblGerente4.setFont(FUENTE_LBL);
+        tblGerente4.setForeground(FG_COLOR);
+        tblGerente4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Número de Teléfono", "Salario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane8.setViewportView(tblGerente4);
+
+        tbdpnEmpleados4.addTab("Gerentes", jScrollPane8);
+
+        lblSalas4.setFont(FUENTE_LBL);
+        lblSalas4.setForeground(FG_COLOR);
+        lblSalas4.setText("Salas:");
+
+        tblSalas4.setBackground(GRIS_BG);
+        tblSalas4.setFont(FUENTE_LBL);
+        tblSalas4.setForeground(FG_COLOR);
+        tblSalas4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "No. de salas", "No. de asientos", "No. de filas", "No. de columnas", "Costo de boleto"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(tblSalas4);
+
+        btnEliminar.setBackground(ROJO);
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/dicon.png"))); // NOI18N
+
+        lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnEliminacionesLayout = new javax.swing.GroupLayout(pnEliminaciones);
+        pnEliminaciones.setLayout(pnEliminacionesLayout);
+        pnEliminacionesLayout.setHorizontalGroup(
+            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(lblTitulo4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEmpleados4)
+                                    .addComponent(lblNumSucursal4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblUbicacion4)
+                                    .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                                .addComponent(btnBuscar3)
+                                .addGap(44, 44, 44)))))
+                .addGap(29, 29, 29))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149))
+            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblSalas4))
+                            .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                            .addComponent(jScrollPane9)))
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(btnEliminar))
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(lblIcono4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+        pnEliminacionesLayout.setVerticalGroup(
+            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTitulo4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNumSucursal4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblUbicacion4)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                        .addComponent(btnBuscar3)
+                        .addGap(36, 36, 36)))
+                .addComponent(lblEmpleados4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblSalas4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(lblIcono4)
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Eliminaciones", jPanel4);
+        tbdpnSucursales.addTab("Eliminaciones", pnEliminaciones);
 
         pnConsultas.setBackground(GRIS_BG);
 
@@ -382,6 +607,7 @@ public class PnSucursal extends javax.swing.JPanel {
         txtInfo2.setEditable(false);
         txtInfo2.setBackground(new java.awt.Color(255, 255, 255));
         txtInfo2.setFont(FUENTE_LBL);
+        txtInfo2.setForeground(GRIS_SEL);
         txtInfo2.setText("Ingrese el número de sucursal o su ubicación para realizar la búsqueda");
         txtInfo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,10 +744,10 @@ public class PnSucursal extends javax.swing.JPanel {
                     .addComponent(lblEmpleados2)
                     .addGroup(pnConsultasLayout.createSequentialGroup()
                         .addGroup(pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNumSucursal2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUbicacion2)
-                            .addComponent(txtUbicacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                            .addComponent(txtNumSucursal2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUbicacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addComponent(btnBuscar2)
                         .addGap(74, 74, 74))))
             .addGroup(pnConsultasLayout.createSequentialGroup()
@@ -529,8 +755,8 @@ public class PnSucursal extends javax.swing.JPanel {
                     .addGroup(pnConsultasLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3)
-                            .addComponent(tbdpnEmpleados2, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                            .addComponent(tbdpnEmpleados2)))
                     .addGroup(pnConsultasLayout.createSequentialGroup()
                         .addGap(305, 305, 305)
                         .addComponent(lblTitulo2))
@@ -572,7 +798,7 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Consultas", pnConsultas);
+        tbdpnSucursales.addTab("Consultas", pnConsultas);
 
         pnRegistro.setBackground(GRIS_BG);
         pnRegistro.setForeground(FG_COLOR);
@@ -633,7 +859,7 @@ public class PnSucursal extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
+        lblIcono3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
         btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
 
@@ -648,8 +874,6 @@ public class PnSucursal extends javax.swing.JPanel {
                         .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNumSucursal3)
                             .addComponent(lblUbicacion3)
-                            .addComponent(txtNumSucursal3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUbicacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnRegistroLayout.createSequentialGroup()
                                     .addComponent(lblNumEmps)
@@ -662,10 +886,9 @@ public class PnSucursal extends javax.swing.JPanel {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(txtNumSalas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnRegSalas)))))
-                    .addGroup(pnRegistroLayout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addComponent(jLabel9))
+                                    .addComponent(btnRegSalas)))
+                            .addComponent(txtNumSucursal3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUbicacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
                         .addGap(300, 300, 300)
                         .addComponent(lblTitulo3))
@@ -674,8 +897,8 @@ public class PnSucursal extends javax.swing.JPanel {
                         .addComponent(btnGuardar2))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
                         .addGap(251, 251, 251)
-                        .addComponent(jLabel11)))
-                .addContainerGap(192, Short.MAX_VALUE))
+                        .addComponent(lblIcono3)))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
         pnRegistroLayout.setVerticalGroup(
             pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -703,23 +926,21 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addGap(56, 56, 56)
                 .addComponent(btnGuardar2)
                 .addGap(104, 104, 104)
-                .addComponent(jLabel11)
-                .addGap(276, 276, 276)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblIcono3)
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Registro", pnRegistro);
+        tbdpnSucursales.addTab("Registro", pnRegistro);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tbdpnSucursales)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 726, Short.MAX_VALUE)
+            .addComponent(tbdpnSucursales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -759,10 +980,10 @@ public class PnSucursal extends javax.swing.JPanel {
         txtUbicacion1.setBorder(BORDE_GRIS);
     }//GEN-LAST:event_txtUbicacion1FocusLost
 
-    private void jTabbedPane1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane1FocusGained
+    private void tbdpnSucursalesFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tbdpnSucursalesFocusGained
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jTabbedPane1FocusGained
+    }//GEN-LAST:event_tbdpnSucursalesFocusGained
 
     private void txtNumSucursal2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumSucursal2FocusGained
         // TODO add your handling code here:
@@ -772,6 +993,10 @@ public class PnSucursal extends javax.swing.JPanel {
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardar1ActionPerformed
+
+    private void txtInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInfo3ActionPerformed
     
     private void txtNumSucursal2FocusLost(java.awt.event.FocusEvent evt) {                                            
         // TODO add your handling code here:
@@ -830,63 +1055,108 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnGuardar11MouseExited(java.awt.event.MouseEvent evt) {                                        
         btnGuardar1.setBackground(ROJO);
-    } 
+    }
+    
+    private void txtNumSucursal4FocusGained(java.awt.event.FocusEvent evt) {                                            
+        // TODO add your handling code here:
+        txtNumSucursal4.setBorder(BORDE_ROJO);
+    }                                           
+    
+    private void txtNumSucursal4FocusLost(java.awt.event.FocusEvent evt) {                                            
+        // TODO add your handling code here:
+        txtNumSucursal4.setBorder(BORDE_GRIS);
+    }   
+    
+    private void txtUbicacion4FocusGained(java.awt.event.FocusEvent evt) {                                            
+        // TODO add your handling code here:
+        txtUbicacion4.setBorder(BORDE_ROJO);
+    }                                           
+    
+    private void txtUbicacion4FocusLost(java.awt.event.FocusEvent evt) {                                            
+        // TODO add your handling code here:
+        txtUbicacion4.setBorder(BORDE_GRIS);
+    }
+    
+    private void btnBuscar3MouseEntered(java.awt.event.MouseEvent evt) {                                         
+        btnBuscar3.setBackground(ROJO_OBS);
+    }                                        
+
+    private void btnBuscar3MouseExited(java.awt.event.MouseEvent evt) {                                        
+        btnBuscar3.setBackground(ROJO);
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
+    private javax.swing.JButton btnBuscar3;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnRegEmps;
     private javax.swing.JButton btnRegSalas;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JLabel lblEmpleados1;
     private javax.swing.JLabel lblEmpleados2;
+    private javax.swing.JLabel lblEmpleados4;
     private javax.swing.JLabel lblIcono1;
     private javax.swing.JLabel lblIcono2;
+    private javax.swing.JLabel lblIcono3;
+    private javax.swing.JLabel lblIcono4;
     private javax.swing.JLabel lblNumEmps;
     private javax.swing.JLabel lblNumSalas;
     private javax.swing.JLabel lblNumSucursal1;
     private javax.swing.JLabel lblNumSucursal2;
     private javax.swing.JLabel lblNumSucursal3;
+    private javax.swing.JLabel lblNumSucursal4;
     private javax.swing.JLabel lblSalas1;
     private javax.swing.JLabel lblSalas2;
+    private javax.swing.JLabel lblSalas4;
     private javax.swing.JLabel lblTitulo1;
     private javax.swing.JLabel lblTitulo2;
     private javax.swing.JLabel lblTitulo3;
+    private javax.swing.JLabel lblTitulo4;
     private javax.swing.JLabel lblUbicacion1;
     private javax.swing.JLabel lblUbicacion2;
     private javax.swing.JLabel lblUbicacion3;
+    private javax.swing.JLabel lblUbicacion4;
     private javax.swing.JPanel pnConsultas;
+    private javax.swing.JPanel pnEliminaciones;
     private javax.swing.JPanel pnModificaciones;
     private javax.swing.JPanel pnRegistro;
     private javax.swing.JTabbedPane tbdpnEmpleados1;
     private javax.swing.JTabbedPane tbdpnEmpleados2;
+    private javax.swing.JTabbedPane tbdpnEmpleados4;
+    private javax.swing.JTabbedPane tbdpnSucursales;
     private javax.swing.JTable tblCajeros1;
     private javax.swing.JTable tblCajeros2;
+    private javax.swing.JTable tblCajeros4;
+    private javax.swing.JTable tblGerente4;
     private javax.swing.JTable tblGerentes1;
     private javax.swing.JTable tblGerentes2;
     private javax.swing.JTable tblSalas1;
     private javax.swing.JTable tblSalas2;
+    private javax.swing.JTable tblSalas4;
     private javax.swing.JTextField txtInfo1;
     private javax.swing.JTextField txtInfo2;
+    private javax.swing.JTextField txtInfo3;
     private javax.swing.JTextField txtNumEmps;
     private javax.swing.JTextField txtNumSalas;
     private javax.swing.JTextField txtNumSucursal1;
     private javax.swing.JTextField txtNumSucursal2;
     private javax.swing.JTextField txtNumSucursal3;
+    private javax.swing.JTextField txtNumSucursal4;
     private javax.swing.JTextField txtUbicacion1;
     private javax.swing.JTextField txtUbicacion2;
     private javax.swing.JTextField txtUbicacion3;
+    private javax.swing.JTextField txtUbicacion4;
     // End of variables declaration//GEN-END:variables
 
 
