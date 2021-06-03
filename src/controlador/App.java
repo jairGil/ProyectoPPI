@@ -1,4 +1,5 @@
-import controlador.ControlInicio;
+package controlador;
+
 import vista.FrmLogin;
 
 public class App {

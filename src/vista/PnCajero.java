@@ -5,6 +5,8 @@
  */
 package vista;
 
+import static vista.Estilos.FUENTE_LBL;
+
 
 
 /**
