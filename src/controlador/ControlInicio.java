@@ -1,9 +1,12 @@
 package controlador;
 
 public class ControlInicio {
-    private final javax.swing.JFrame frm;
+    private javax.swing.JFrame frm;
 
-    public ControlInicio(javax.swing.JFrame frm) {
+    public ControlInicio() {
+    }
+    
+    public void setFrame (javax.swing.JFrame frm) {
         this.frm = frm;
     }
     
