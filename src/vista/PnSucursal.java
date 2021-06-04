@@ -59,25 +59,6 @@ public class PnSucursal extends javax.swing.JPanel {
         btnGuardar1 = new javax.swing.JButton();
         lblIcono1 = new javax.swing.JLabel();
         btnBuscar1 = new javax.swing.JButton();
-        pnEliminaciones = new javax.swing.JPanel();
-        lblTitulo4 = new javax.swing.JLabel();
-        txtInfo3 = new javax.swing.JTextField();
-        lblNumSucursal4 = new javax.swing.JLabel();
-        txtNumSucursal4 = new javax.swing.JTextField();
-        lblUbicacion4 = new javax.swing.JLabel();
-        txtUbicacion4 = new javax.swing.JTextField();
-        btnBuscar3 = new javax.swing.JButton();
-        lblEmpleados4 = new javax.swing.JLabel();
-        tbdpnEmpleados4 = new javax.swing.JTabbedPane();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tblCajeros4 = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tblGerente4 = new javax.swing.JTable();
-        lblSalas4 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        tblSalas4 = new javax.swing.JTable();
-        btnEliminar = new javax.swing.JButton();
-        lblIcono4 = new javax.swing.JLabel();
         pnConsultas = new javax.swing.JPanel();
         lblTitulo2 = new javax.swing.JLabel();
         lblNumSucursal2 = new javax.swing.JLabel();
@@ -110,6 +91,25 @@ public class PnSucursal extends javax.swing.JPanel {
         btnRegEmps = new javax.swing.JButton();
         lblIcono3 = new javax.swing.JLabel();
         btnGuardar2 = new javax.swing.JButton();
+        pnEliminaciones = new javax.swing.JPanel();
+        lblTitulo4 = new javax.swing.JLabel();
+        txtInfo3 = new javax.swing.JTextField();
+        lblNumSucursal4 = new javax.swing.JLabel();
+        txtNumSucursal4 = new javax.swing.JTextField();
+        lblUbicacion4 = new javax.swing.JLabel();
+        txtUbicacion4 = new javax.swing.JTextField();
+        btnBuscar3 = new javax.swing.JButton();
+        lblEmpleados4 = new javax.swing.JLabel();
+        tbdpnEmpleados4 = new javax.swing.JTabbedPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblCajeros4 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblGerente4 = new javax.swing.JTable();
+        lblSalas4 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tblSalas4 = new javax.swing.JTable();
+        btnEliminar = new javax.swing.JButton();
+        lblIcono4 = new javax.swing.JLabel();
 
         tbdpnSucursales.setBackground(new java.awt.Color(255, 255, 255));
         tbdpnSucursales.setForeground(GRIS_SEL);
@@ -365,225 +365,6 @@ public class PnSucursal extends javax.swing.JPanel {
         );
 
         tbdpnSucursales.addTab("Modificaciones", pnModificaciones);
-
-        lblTitulo4.setFont(FUENTE_LBL);
-        lblTitulo4.setForeground(FG_COLOR);
-        lblTitulo4.setText("Sucursales");
-
-        txtInfo3.setFont(FUENTE_LBL);
-        txtInfo3.setForeground(GRIS_SEL);
-        txtInfo3.setText("Ingrese el número de sucursal o su ubicación paara la eliminación de la misma");
-        txtInfo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtInfo3ActionPerformed(evt);
-            }
-        });
-
-        lblNumSucursal4.setFont(FUENTE_LBL);
-        lblNumSucursal4.setForeground(FG_COLOR);
-        lblNumSucursal4.setText("Número de Sucursal:");
-
-        txtNumSucursal4.setBackground(GRIS_BG);
-        txtNumSucursal4.setFont(FUENTE_TXT);
-        txtNumSucursal4.setForeground(FG_COLOR);
-
-        lblUbicacion4.setFont(FUENTE_LBL);
-        lblUbicacion4.setForeground(FG_COLOR);
-        lblUbicacion4.setText("Ubicación:");
-
-        txtUbicacion4.setBackground(GRIS_BG);
-        txtUbicacion4.setFont(FUENTE_TXT);
-        txtUbicacion4.setForeground(FG_COLOR);
-
-        btnBuscar3.setBackground(ROJO);
-        btnBuscar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
-
-        lblEmpleados4.setFont(FUENTE_LBL);
-        lblEmpleados4.setForeground(FG_COLOR);
-        lblEmpleados4.setText("Empleados:");
-
-        tblCajeros4.setBackground(GRIS_BG);
-        tblCajeros4.setFont(FUENTE_LBL);
-        tblCajeros4.setForeground(FG_COLOR);
-        tblCajeros4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane7.setViewportView(tblCajeros4);
-
-        tbdpnEmpleados4.addTab("Cajeros", jScrollPane7);
-
-        tblGerente4.setBackground(GRIS_BG);
-        tblGerente4.setFont(FUENTE_LBL);
-        tblGerente4.setForeground(FG_COLOR);
-        tblGerente4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane8.setViewportView(tblGerente4);
-
-        tbdpnEmpleados4.addTab("Gerentes", jScrollPane8);
-
-        lblSalas4.setFont(FUENTE_LBL);
-        lblSalas4.setForeground(FG_COLOR);
-        lblSalas4.setText("Salas:");
-
-        tblSalas4.setBackground(GRIS_BG);
-        tblSalas4.setFont(FUENTE_LBL);
-        tblSalas4.setForeground(FG_COLOR);
-        tblSalas4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "No. de salas", "No. de asientos", "No. de filas", "No. de columnas", "Costo de boleto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane9.setViewportView(tblSalas4);
-
-        btnEliminar.setBackground(ROJO);
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/dicon.png"))); // NOI18N
-
-        lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnEliminacionesLayout = new javax.swing.GroupLayout(pnEliminaciones);
-        pnEliminaciones.setLayout(pnEliminacionesLayout);
-        pnEliminacionesLayout.setHorizontalGroup(
-            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
-                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
-                        .addGap(303, 303, 303)
-                        .addComponent(lblTitulo4)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblEmpleados4)
-                                    .addComponent(lblNumSucursal4))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblUbicacion4)
-                                    .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                                .addComponent(btnBuscar3)
-                                .addGap(44, 44, 44)))))
-                .addGap(29, 29, 29))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
-            .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblSalas4))
-                            .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
-                            .addComponent(jScrollPane9)))
-                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                        .addGap(293, 293, 293)
-                        .addComponent(btnEliminar))
-                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(lblIcono4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnEliminacionesLayout.setVerticalGroup(
-            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblTitulo4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblNumSucursal4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
-                        .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblUbicacion4)
-                        .addGap(10, 10, 10)
-                        .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
-                        .addComponent(btnBuscar3)
-                        .addGap(36, 36, 36)))
-                .addComponent(lblEmpleados4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblSalas4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEliminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(lblIcono4)
-                .addContainerGap())
-        );
-
-        tbdpnSucursales.addTab("Eliminaciones", pnEliminaciones);
 
         pnConsultas.setBackground(GRIS_BG);
 
@@ -932,6 +713,225 @@ public class PnSucursal extends javax.swing.JPanel {
 
         tbdpnSucursales.addTab("Registro", pnRegistro);
 
+        lblTitulo4.setFont(FUENTE_LBL);
+        lblTitulo4.setForeground(FG_COLOR);
+        lblTitulo4.setText("Sucursales");
+
+        txtInfo3.setFont(FUENTE_LBL);
+        txtInfo3.setForeground(GRIS_SEL);
+        txtInfo3.setText("Ingrese el número de sucursal o su ubicación paara la eliminación de la misma");
+        txtInfo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInfo3ActionPerformed(evt);
+            }
+        });
+
+        lblNumSucursal4.setFont(FUENTE_LBL);
+        lblNumSucursal4.setForeground(FG_COLOR);
+        lblNumSucursal4.setText("Número de Sucursal:");
+
+        txtNumSucursal4.setBackground(GRIS_BG);
+        txtNumSucursal4.setFont(FUENTE_TXT);
+        txtNumSucursal4.setForeground(FG_COLOR);
+
+        lblUbicacion4.setFont(FUENTE_LBL);
+        lblUbicacion4.setForeground(FG_COLOR);
+        lblUbicacion4.setText("Ubicación:");
+
+        txtUbicacion4.setBackground(GRIS_BG);
+        txtUbicacion4.setFont(FUENTE_TXT);
+        txtUbicacion4.setForeground(FG_COLOR);
+
+        btnBuscar3.setBackground(ROJO);
+        btnBuscar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
+
+        lblEmpleados4.setFont(FUENTE_LBL);
+        lblEmpleados4.setForeground(FG_COLOR);
+        lblEmpleados4.setText("Empleados:");
+
+        tblCajeros4.setBackground(GRIS_BG);
+        tblCajeros4.setFont(FUENTE_LBL);
+        tblCajeros4.setForeground(FG_COLOR);
+        tblCajeros4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Número de Teléfono", "Salario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(tblCajeros4);
+
+        tbdpnEmpleados4.addTab("Cajeros", jScrollPane7);
+
+        tblGerente4.setBackground(GRIS_BG);
+        tblGerente4.setFont(FUENTE_LBL);
+        tblGerente4.setForeground(FG_COLOR);
+        tblGerente4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Número de Teléfono", "Salario"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane8.setViewportView(tblGerente4);
+
+        tbdpnEmpleados4.addTab("Gerentes", jScrollPane8);
+
+        lblSalas4.setFont(FUENTE_LBL);
+        lblSalas4.setForeground(FG_COLOR);
+        lblSalas4.setText("Salas:");
+
+        tblSalas4.setBackground(GRIS_BG);
+        tblSalas4.setFont(FUENTE_LBL);
+        tblSalas4.setForeground(FG_COLOR);
+        tblSalas4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "No. de salas", "No. de asientos", "No. de filas", "No. de columnas", "Costo de boleto"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(tblSalas4);
+
+        btnEliminar.setBackground(ROJO);
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/dicon.png"))); // NOI18N
+
+        lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnEliminacionesLayout = new javax.swing.GroupLayout(pnEliminaciones);
+        pnEliminaciones.setLayout(pnEliminacionesLayout);
+        pnEliminacionesLayout.setHorizontalGroup(
+            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(lblTitulo4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEmpleados4)
+                                    .addComponent(lblNumSucursal4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblUbicacion4)
+                                    .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                                .addComponent(btnBuscar3)
+                                .addGap(44, 44, 44)))))
+                .addGap(29, 29, 29))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(149, 149, 149))
+            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lblSalas4))
+                            .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                            .addComponent(jScrollPane9)))
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(btnEliminar))
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(lblIcono4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnEliminacionesLayout.setVerticalGroup(
+            pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTitulo4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNumSucursal4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnEliminacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnEliminacionesLayout.createSequentialGroup()
+                        .addComponent(txtNumSucursal4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblUbicacion4)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtUbicacion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEliminacionesLayout.createSequentialGroup()
+                        .addComponent(btnBuscar3)
+                        .addGap(36, 36, 36)))
+                .addComponent(lblEmpleados4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tbdpnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblSalas4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(lblIcono4)
+                .addContainerGap())
+        );
+
+        tbdpnSucursales.addTab("Eliminaciones", pnEliminaciones);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -940,7 +940,7 @@ public class PnSucursal extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tbdpnSucursales, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
+            .addComponent(tbdpnSucursales, javax.swing.GroupLayout.Alignment.TRAILING)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1083,6 +1083,36 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnBuscar3MouseExited(java.awt.event.MouseEvent evt) {                                        
         btnBuscar3.setBackground(ROJO);
+    }
+    
+    public String getNoSucursal(short m) { //1: Modificaciones, 2: Consultas, 3: Registros, 4: Eliminaciones
+        switch(m){
+            case 1:
+                return txtNumSucursal1.getText();
+            case 2:
+                return txtNumSucursal2.getText();
+            case 3:
+                return txtNumSucursal3.getText();
+            case 4:
+                return txtNumSucursal4.getText();
+            default:
+                return "";
+        }
+    }
+    
+    public String getUbicacion(short m) { //1: Modificaciones, 2: Consultas, 3: Registros, 4: Eliminaciones
+        switch(m){
+            case 1:
+                return txtUbicacion1.getText();
+            case 2:
+                return txtUbicacion2.getText();
+            case 3:
+                return txtUbicacion3.getText();
+            case 4:
+                return txtUbicacion4.getText();
+            default:
+                return "";
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
