@@ -10,6 +10,7 @@ import excepciones.ExSucursal;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelos.Sala;
 import modelos.Sucursal;
 import vista.PnSala;
@@ -21,7 +22,6 @@ import vista.PnSucursal;
  */
 public class CtrlSucursal {
     private PnSucursal scrsl;
-    private PnSala sl;
     private DaoGen<Sucursal> dscrsl;
     
     public void setVista(PnSucursal scrsl){
@@ -29,8 +29,11 @@ public class CtrlSucursal {
     }
     
     public void agregarSala(ActionEvent ae){
+        DefaultTableModel t;
         ArrayList<Sala> s = new ArrayList();
         int ns = Integer.parseInt(this.scrsl.getNumSalas());
+        t=this.scrsl.getSalas((short)3);
+        t.setRowCount(ns);
         
     }
     
