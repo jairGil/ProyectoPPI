@@ -8,8 +8,11 @@ package controlador;
 import controlador.crud.DaoGen;
 import excepciones.ExSucursal;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelos.Sala;
 import modelos.Sucursal;
+import vista.PnSala;
 import vista.PnSucursal;
 
 /**
@@ -18,10 +21,17 @@ import vista.PnSucursal;
  */
 public class CtrlSucursal {
     private PnSucursal scrsl;
+    private PnSala sl;
     private DaoGen<Sucursal> dscrsl;
     
     public void setVista(PnSucursal scrsl){
         this.scrsl=scrsl;
+    }
+    
+    public void agregarSala(ActionEvent ae){
+        ArrayList<Sala> s = new ArrayList();
+        int ns = Integer.parseInt(this.scrsl.getNumSalas());
+        
     }
     
     public void agregarSucursal(ActionEvent ae){
@@ -35,7 +45,7 @@ public class CtrlSucursal {
                 suc = new Sucursal(ns, nu);
                 dscrsl.crearT(suc,"Sucs.dat");
             }catch(ExSucursal ex){
-                JOptionPane.showMessageDialog(scrsl, "Error al agregar sala.");
+                JOptionPane.showMessageDialog(scrsl, "Error al agregar la sucursal.");
             }
         }
     }
