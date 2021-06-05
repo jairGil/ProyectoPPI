@@ -70,7 +70,7 @@ public class DaoSala implements IDao<Sala>{
         if(!b){
             throw new RuntimeException("No se encontró la sala indicada");
         }
-        Archivos.escribirObjeto(salas,"Salas.dat");
+        actualizar(salas);
     }
     
     
