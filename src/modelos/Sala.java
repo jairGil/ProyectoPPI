@@ -44,7 +44,22 @@ public class Sala implements Serializable{
         }
         
     }
-
+    
+    public ArrayList<Asiento> cambiarAsientos(int filas, int columnas) throws ExAsiento{
+        ArrayList<Asiento> nA = new ArrayList();
+        for(int i = 67; i <= (67 + filas); i++){
+            for(int j = 1; j <= columnas; j++){
+                nA.add(new Asiento((char)i,j,false));
+            }
+        }
+        
+        return nA;
+    }
+    
+    public void setAsientos(ArrayList<Asiento> as){
+        this.registroAsientos = as;
+    }
+    
     public void setNoSala(int noSala) throws ExSala {
         if(noSala <= 0)
             throw new ExSala("Número de sala inválido");
