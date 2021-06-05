@@ -9,6 +9,7 @@ import controlador.crud.DaoGen;
 import excepciones.ExSucursal;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelos.Sala;
@@ -28,13 +29,12 @@ public class CtrlSucursal {
         this.scrsl=scrsl;
     }
     
-    public void agregarSala(ActionEvent ae){
+    public void agregarSala(ActionEvent ae){ //Llenar la tabla con los datos de un objeto sala, recuperarlos en agregarSucursal
         DefaultTableModel t;
         ArrayList<Sala> s = new ArrayList();
         int ns = Integer.parseInt(this.scrsl.getNumSalas());
         t=this.scrsl.getSalas((short)3);
         t.setRowCount(ns);
-        
     }
     
     public void agregarSucursal(ActionEvent ae){

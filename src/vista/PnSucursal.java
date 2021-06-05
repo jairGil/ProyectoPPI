@@ -6,6 +6,7 @@
 package vista;
 
 import java.awt.Color;
+import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import static vista.Estilos.BORDE_GRIS;
 import static vista.Estilos.BORDE_ROJO;
@@ -1240,6 +1241,10 @@ public class PnSucursal extends javax.swing.JPanel {
             default:
                 return null;
         }
+    }
+    
+    public JButton getBoton(){
+        return this.btnRegSalas;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
