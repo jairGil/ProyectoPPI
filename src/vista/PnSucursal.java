@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.CtrlSucursal;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
@@ -28,8 +29,10 @@ public class PnSucursal extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
-    public PnSucursal() {
+    private CtrlSucursal ctrlscrsl;
+    public PnSucursal(CtrlSucursal ctrl) {
         initComponents();
+        this.ctrlscrsl=ctrl;
     }
 
     /**
@@ -1078,10 +1081,12 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnRegSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegSalasActionPerformed
         // TODO add your handling code here:
+        this.ctrlscrsl.agregarSalas(evt);
     }//GEN-LAST:event_btnRegSalasActionPerformed
 
     private void btnRegEmpsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegEmpsActionPerformed
         // TODO add your handling code here:
+        this.ctrlscrsl.agregarEmpleados(evt);
     }//GEN-LAST:event_btnRegEmpsActionPerformed
 
     private void txtUbicacion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUbicacion1ActionPerformed
@@ -1124,6 +1129,7 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
         // TODO add your handling code here:
+        this.ctrlscrsl.agregarSucursal(evt);
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void txtInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo3ActionPerformed

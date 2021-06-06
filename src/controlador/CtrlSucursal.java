@@ -29,7 +29,7 @@ import vista.PnSucursal;
 public class CtrlSucursal {
     private PnSucursal scrsl;
     private DaoGen<Sucursal> dscrsl;
-    private DefaultTableModel ts,tc,tg; //Tablas desalas, cajeros y gerentes, respectivamente
+    private DefaultTableModel ts,tc,tg; //Tablas de salas, cajeros y gerentes, respectivamente
     private int ns,nc,ng; //Número de salas, cajeros y gerentes, respectivamente
     private boolean sc=false,ec=false; //Banderas para activar el botón de registro de la sucursal
     private JButton btnreg; //Botón de registro de la sucursal
