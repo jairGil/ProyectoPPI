@@ -88,8 +88,8 @@ public class PnSucursal extends javax.swing.JPanel {
         lblNumSalas = new javax.swing.JLabel();
         btnRegSalas = new javax.swing.JButton();
         txtNumSalas = new javax.swing.JTextField();
-        lblNumEmps = new javax.swing.JLabel();
-        txtNumEmps = new javax.swing.JTextField();
+        lblNumCajeros = new javax.swing.JLabel();
+        txtNumCajeros = new javax.swing.JTextField();
         btnRegEmps = new javax.swing.JButton();
         lblIcono3 = new javax.swing.JLabel();
         btnGuardar2 = new javax.swing.JButton();
@@ -100,6 +100,8 @@ public class PnSucursal extends javax.swing.JPanel {
         tblGerentes3 = new javax.swing.JTable();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblSalas3 = new javax.swing.JTable();
+        lblNumGerentes = new javax.swing.JLabel();
+        txtNumGerentes = new javax.swing.JTextField();
         pnEliminaciones = new javax.swing.JPanel();
         lblTitulo4 = new javax.swing.JLabel();
         txtInfo3 = new javax.swing.JTextField();
@@ -631,13 +633,13 @@ public class PnSucursal extends javax.swing.JPanel {
         txtNumSalas.setFont(FUENTE_TXT);
         txtNumSalas.setForeground(FG_COLOR);
 
-        lblNumEmps.setFont(FUENTE_LBL);
-        lblNumEmps.setForeground(FG_COLOR);
-        lblNumEmps.setText("Número de empleados:");
+        lblNumCajeros.setFont(FUENTE_LBL);
+        lblNumCajeros.setForeground(FG_COLOR);
+        lblNumCajeros.setText("Número de cajeros:");
 
-        txtNumEmps.setBackground(GRIS_BG);
-        txtNumEmps.setFont(FUENTE_TXT);
-        txtNumEmps.setForeground(FG_COLOR);
+        txtNumCajeros.setBackground(GRIS_BG);
+        txtNumCajeros.setFont(FUENTE_TXT);
+        txtNumCajeros.setForeground(FG_COLOR);
 
         btnRegEmps.setBackground(ROJO);
         btnRegEmps.setFont(FUENTE_LBL);
@@ -652,6 +654,7 @@ public class PnSucursal extends javax.swing.JPanel {
         lblIcono3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
         btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
+        btnGuardar2.setEnabled(false);
 
         tbdpnEmpleados3.setForeground(FG_COLOR);
         tbdpnEmpleados3.setToolTipText("");
@@ -665,14 +668,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Ap. Paterno", "Ap. Materno", "No. de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -695,14 +698,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Ap. Paterno", "Ap. Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -745,15 +748,20 @@ public class PnSucursal extends javax.swing.JPanel {
         });
         jScrollPane12.setViewportView(tblSalas3);
 
+        lblNumGerentes.setFont(FUENTE_LBL);
+        lblNumGerentes.setForeground(FG_COLOR);
+        lblNumGerentes.setText("Número de gerentes:");
+
+        txtNumGerentes.setBackground(GRIS_BG);
+        txtNumGerentes.setFont(FUENTE_TXT);
+        txtNumGerentes.setForeground(FG_COLOR);
+
         javax.swing.GroupLayout pnRegistroLayout = new javax.swing.GroupLayout(pnRegistro);
         pnRegistro.setLayout(pnRegistroLayout);
         pnRegistroLayout.setHorizontalGroup(
             pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnRegistroLayout.createSequentialGroup()
                 .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnRegistroLayout.createSequentialGroup()
-                        .addGap(300, 300, 300)
-                        .addComponent(lblTitulo3))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,19 +770,20 @@ public class PnSucursal extends javax.swing.JPanel {
                             .addComponent(txtNumSucursal3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUbicacion3, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnRegistroLayout.createSequentialGroup()
-                                .addComponent(lblNumEmps)
+                                .addComponent(lblNumCajeros)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNumEmps, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNumCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(lblNumGerentes)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNumGerentes, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnRegEmps))))
                     .addGroup(pnRegistroLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(lblNumSalas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumSalas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRegSalas)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(300, 300, 300)
+                        .addComponent(lblTitulo3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(75, 75, 75))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnRegistroLayout.createSequentialGroup()
                 .addGap(0, 43, Short.MAX_VALUE)
                 .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -789,13 +798,21 @@ public class PnSucursal extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnRegistroLayout.createSequentialGroup()
                         .addComponent(lblIcono3)
                         .addGap(249, 249, 249))))
+            .addGroup(pnRegistroLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(lblNumSalas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNumSalas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegSalas)
+                .addGap(85, 85, 85))
         );
         pnRegistroLayout.setVerticalGroup(
             pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnRegistroLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(lblTitulo3)
-                .addGap(28, 28, 28)
+                .addGap(16, 16, 16)
                 .addComponent(lblNumSucursal3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNumSucursal3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -803,11 +820,13 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addComponent(lblUbicacion3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUbicacion3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(pnRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNumEmps)
-                    .addComponent(txtNumEmps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegEmps))
+                    .addComponent(lblNumCajeros)
+                    .addComponent(txtNumCajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegEmps)
+                    .addComponent(lblNumGerentes)
+                    .addComponent(txtNumGerentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tbdpnEmpleados3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1232,19 +1251,52 @@ public class PnSucursal extends javax.swing.JPanel {
         return txtNumSalas.getText();
     }
     
+    public String getNumCajeros(){
+        return txtNumCajeros.getText();
+    }
+    
+    public String getNumGerentes(){
+        return txtNumGerentes.getText();
+    }
+    
     public DefaultTableModel getSalas(short m) { //1: Modificaciones, 3: Registros
         switch(m){
             case 1:
                 return (DefaultTableModel)tblSalas1.getModel();
             case 3:
-                return (DefaultTableModel)tblSalas2.getModel();
+                return (DefaultTableModel)tblSalas3.getModel();
             default:
                 return null;
         }
     }
     
-    public JButton getBoton(){
-        return this.btnRegSalas;
+    public DefaultTableModel getCajeros(short m) { //1: Modificaciones, 3: Registros
+        switch(m){
+            case 1:
+                return (DefaultTableModel)tblCajeros1.getModel();
+            case 3:
+                return (DefaultTableModel)tblCajeros3.getModel();
+            default:
+                return null;
+        }
+    }
+    
+    public DefaultTableModel getGerentes(short m) { //1: Modificaciones, 3: Registros
+        switch(m){
+            case 1:
+                return (DefaultTableModel)tblGerentes1.getModel();
+            case 3:
+                return (DefaultTableModel)tblGerentes3.getModel();
+            default:
+                return null;
+        }
+    }
+    
+    public JButton getBoton(short n){//1: Botón del registro de salas, otro: Botón del registro de empleados
+        if(n==1){
+            return btnRegSalas;
+        }
+        return btnRegEmps;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1275,7 +1327,8 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JLabel lblIcono2;
     private javax.swing.JLabel lblIcono3;
     private javax.swing.JLabel lblIcono4;
-    private javax.swing.JLabel lblNumEmps;
+    private javax.swing.JLabel lblNumCajeros;
+    private javax.swing.JLabel lblNumGerentes;
     private javax.swing.JLabel lblNumSalas;
     private javax.swing.JLabel lblNumSucursal1;
     private javax.swing.JLabel lblNumSucursal2;
@@ -1316,7 +1369,8 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JTextField txtInfo1;
     private javax.swing.JTextField txtInfo2;
     private javax.swing.JTextField txtInfo3;
-    private javax.swing.JTextField txtNumEmps;
+    private javax.swing.JTextField txtNumCajeros;
+    private javax.swing.JTextField txtNumGerentes;
     private javax.swing.JTextField txtNumSalas;
     private javax.swing.JTextField txtNumSucursal1;
     private javax.swing.JTextField txtNumSucursal2;

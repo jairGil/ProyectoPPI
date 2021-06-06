@@ -6,15 +6,20 @@
 package controlador;
 
 import controlador.crud.DaoGen;
+import excepciones.ExEmpleado;
+import excepciones.ExPersona;
+import excepciones.ExSala;
 import excepciones.ExSucursal;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelos.Cajero;
+import modelos.Empleado;
+import modelos.Gerente;
 import modelos.Sala;
 import modelos.Sucursal;
-import vista.PnSala;
 import vista.PnSucursal;
 
 /**
@@ -24,32 +29,108 @@ import vista.PnSucursal;
 public class CtrlSucursal {
     private PnSucursal scrsl;
     private DaoGen<Sucursal> dscrsl;
+    private DefaultTableModel ts,tc,tg; //Tablas desalas, cajeros y gerentes, respectivamente
+    private int ns,nc,ng; //Número de salas, cajeros y gerentes, respectivamente
+    private boolean sc=false,ec=false; //Banderas para activar el botón de registro de la sucursal
+    private JButton btnreg; //Botón de registro de la sucursal
     
     public void setVista(PnSucursal scrsl){
         this.scrsl=scrsl;
+        ts=this.scrsl.getSalas((short)3);
+        tc=this.scrsl.getCajeros((short)3);
+        tg=this.scrsl.getGerentes((short)3);
+        btnreg=this.scrsl.getBoton((short)1);
     }
     
-    public void agregarSala(ActionEvent ae){ //Llenar la tabla con los datos de un objeto sala, recuperarlos en agregarSucursal
-        DefaultTableModel t;
-        ArrayList<Sala> s = new ArrayList();
-        int ns = Integer.parseInt(this.scrsl.getNumSalas());
-        t=this.scrsl.getSalas((short)3);
-        t.setRowCount(ns);
+    public void agregarSalas(ActionEvent ae){ //Comenzar el llenado de los datos de las salas
+        if(!(this.scrsl.getNumSalas().isEmpty())){
+            ns = Integer.parseInt(this.scrsl.getNumSalas());
+            ts.setRowCount(ns);
+            sc=true;
+            if(ec){
+                btnreg.setEnabled(true);
+            }
+        }else{
+            ts.setRowCount(0);
+            JOptionPane.showMessageDialog(scrsl,"Ingrese el número de salas a registrar");
+        }
+    }
+    
+    public void agregarEmpleados(ActionEvent ae){ //Comenzar el llenado de los datos de los empleados
+        if(!(this.scrsl.getNumCajeros().isEmpty()) && !(this.scrsl.getNumGerentes().isEmpty())){
+            nc = Integer.parseInt(this.scrsl.getNumCajeros());
+            ng = Integer.parseInt(this.scrsl.getNumGerentes());
+            tc.setRowCount(nc);
+            tg.setRowCount(ng);
+            ec=true;
+            if(sc){
+                btnreg.setEnabled(true);
+            }
+        }else{
+            tc.setRowCount(0);
+            tg.setRowCount(0);
+            JOptionPane.showMessageDialog(scrsl,"Ingrese completamente el número de empleados a registrar");
+        }
     }
     
     public void agregarSucursal(ActionEvent ae){
         Sucursal suc;
-        if(this.scrsl.getNoSucursal((short)3).isEmpty() || this.scrsl.getUbicacion((short)3).isEmpty()){
+        if(this.scrsl.getNoSucursal((short)3).isEmpty() || this.scrsl.getUbicacion((short)3).isEmpty() || tablaIncompleta(ts,ns) || tablaIncompleta(tc,nc) || tablaIncompleta(tg,ng)){
             JOptionPane.showMessageDialog(scrsl, "Llene los campos vacios.");
         }else{
             try{
-                int ns = Integer.parseInt(this.scrsl.getNoSucursal((short)3));
-                String nu = (this.scrsl.getUbicacion((short)3));
-                suc = new Sucursal(ns, nu);
+                ArrayList<Sala> s = new ArrayList();
+                ArrayList<Empleado> e = new ArrayList();
+                Sala sal;
+                Cajero caj;
+                Gerente ger;
+                int i,numsal,numasi,numfil,numcol;
+                float cosbol,salario;
+                String numtel,nom,ap,am;
+                int nums = Integer.parseInt(this.scrsl.getNoSucursal((short)3));
+                String u = (this.scrsl.getUbicacion((short)3));
+                for(i=0;i<ns;i++){//Recuperación de datos de las salas
+                    numsal=(int)ts.getValueAt(i,0);
+                    numasi=(int)ts.getValueAt(i,1);
+                    numfil=(int)ts.getValueAt(i,2);
+                    numcol=(int)ts.getValueAt(i,3);
+                    cosbol=(float)ts.getValueAt(i,4);
+                    sal = new Sala(numsal,numasi,numfil,numcol,cosbol);
+                    s.add(sal);
+                }
+                for(i=0;i<nc;i++){//Recuperación de datos de los cajeros
+                    nom=(String)tc.getValueAt(i,0);
+                    ap=(String)tc.getValueAt(i,1);
+                    am=(String)tc.getValueAt(i,2);
+                    numtel=(String)tc.getValueAt(i,3);
+                    salario=(float)tc.getValueAt(i,4);
+                    caj = new Cajero(numtel,salario,nom,ap,am);
+                    e.add(caj);
+                }
+                for(i=0;i<ng;i++){//Recuperación de datos de los gerentes
+                    nom=(String)tg.getValueAt(i,0);
+                    ap=(String)tg.getValueAt(i,1);
+                    am=(String)tg.getValueAt(i,2);
+                    numtel=(String)tg.getValueAt(i,3);
+                    salario=(float)tg.getValueAt(i,4);
+                    ger = new Gerente(numtel,salario,nom,ap,am);
+                    e.add(ger);
+                }
+                suc = new Sucursal(nums,u,s,e);
                 dscrsl.crearT(suc,"Sucs.dat");
-            }catch(ExSucursal ex){
+            }catch(ExSucursal | ExSala | ExPersona |ExEmpleado ex){
                 JOptionPane.showMessageDialog(scrsl, "Error al agregar la sucursal.");
             }
         }
     }
+    
+    static boolean tablaIncompleta(DefaultTableModel t, int n){ //Revisa si a la tabla le falta algún registro
+        int i;
+        for(i=0;i<n;i++){
+            if(t.getValueAt(i, 0)==null)
+                return false;
+        }
+        return true;
+    }
+    
 }

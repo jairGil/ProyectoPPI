@@ -19,9 +19,11 @@ public class Sucursal implements Serializable{
     private ArrayList<Sala> salas = new ArrayList();
     private ArrayList<Empleado> empleados = new ArrayList();
     
-    public Sucursal(int noSucursal, String ubicacion) throws ExSucursal{
+    public Sucursal(int noSucursal, String ubicacion, ArrayList<Sala> salas, ArrayList<Empleado> empleados) throws ExSucursal{
         setNoSucursal(noSucursal);
         setUbicacion(ubicacion);
+        this.salas=salas;
+        this.empleados=empleados;
     }
     
     public void agregarSala(Sala sala){
