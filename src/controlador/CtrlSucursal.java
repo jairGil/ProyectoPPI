@@ -65,17 +65,34 @@ public class CtrlSucursal {
             JOptionPane.showMessageDialog(scrsl,"Ingrese los datos de la sucursal que desea modificar");
         }
         for (int i = 0; i < tsuc.get(sa).getSalas().size(); i++) { //Salas de la sucursal consultada
-                    if (ts.getRowCount() == 0) {
-                        Object e[];
-                        e = new Object[5];
-                        e[0] = tsuc.get(sa).getSalas().get(i).getNoSala();
-                        e[1] = tsuc.get(sa).getSalas().get(i).getNoAsientos();
-                        e[2] = tsuc.get(sa).getSalas().get(i).getNoFilas();
-                        e[3] = tsuc.get(sa).getSalas().get(i).getNoColumnas();
-                        e[4] = tsuc.get(sa).getSalas().get(i).getCostoBoleto();
-                        ts.addRow(e);
-                    }
+            if (ts.getRowCount() == 0) {
+                Object e[];
+                e = new Object[5];
+                e[0] = tsuc.get(sa).getSalas().get(i).getNoSala();
+                e[1] = tsuc.get(sa).getSalas().get(i).getNoAsientos();
+                e[2] = tsuc.get(sa).getSalas().get(i).getNoFilas();
+                e[3] = tsuc.get(sa).getSalas().get(i).getNoColumnas();
+                e[4] = tsuc.get(sa).getSalas().get(i).getCostoBoleto();
+                ts.addRow(e);
+            }
+        }
+        for (int i = 0; i < tsuc.get(sa).getEmpleados().size(); i++) { //Empleados de la sucursal consultada
+            if (tc.getRowCount() == 0 && tg.getRowCount()==0) {
+                Object e[];
+                e = new Object[5];
+                e[0] = tsuc.get(sa).getEmpleados().get(i).getNombre();
+                e[1] = tsuc.get(sa).getEmpleados().get(i).getApellidoPaterno();
+                e[2] = tsuc.get(sa).getEmpleados().get(i).getApellidoMaterno();
+                e[3] = tsuc.get(sa).getEmpleados().get(i).getNoTelefono();
+                e[4] = tsuc.get(sa).getEmpleados().get(i).getSalario();
+                if(tsuc.get(sa).getEmpleados().get(i) instanceof Cajero){
+                    tc.addRow(e);
+                }else{
+                    tg.addRow(e);
                 }
+                
+            }
+        }
     }   
     
     //Pestaña de registro

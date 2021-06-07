@@ -57,4 +57,8 @@ public class Sucursal implements Serializable{
         return salas;
     }
     
+    public ArrayList<Empleado> getEmpleados(){
+        return empleados;
+    }
+    
 }
