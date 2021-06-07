@@ -48,7 +48,13 @@ public class Sucursal implements Serializable{
     public int getNoSucursal() {
         return noSucursal;
     }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
     
-    
+    public ArrayList<Sala> getSalas(){
+        return salas;
+    }
     
 }

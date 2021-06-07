@@ -82,6 +82,7 @@ public class PnSucursal extends javax.swing.JPanel {
         tblSalas2 = new javax.swing.JTable();
         btnBuscar2 = new javax.swing.JButton();
         lblIcono2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         pnRegistro = new javax.swing.JPanel();
         lblTitulo3 = new javax.swing.JLabel();
         lblNumSucursal3 = new javax.swing.JLabel();
@@ -146,6 +147,11 @@ public class PnSucursal extends javax.swing.JPanel {
         txtInfo1.setFont(FUENTE_LBL);
         txtInfo1.setForeground(GRIS_SEL);
         txtInfo1.setText("Ingrese el número de sucursal para hacer la modificación de la misma");
+        txtInfo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInfo1ActionPerformed(evt);
+            }
+        });
 
         lblNumSucursal1.setFont(FUENTE_LBL);
         lblNumSucursal1.setForeground(FG_COLOR);
@@ -295,6 +301,11 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnBuscar1.setBackground(ROJO);
         btnBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
+        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnModificacionesLayout = new javax.swing.GroupLayout(pnModificaciones);
         pnModificaciones.setLayout(pnModificacionesLayout);
@@ -523,14 +534,15 @@ public class PnSucursal extends javax.swing.JPanel {
 
         lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
+        jButton1.setBackground(ROJO);
+        jButton1.setFont(FUENTE_LBL);
+        jButton1.setForeground(FG_COLOR);
+        jButton1.setText("Consulta general");
+
         javax.swing.GroupLayout pnConsultasLayout = new javax.swing.GroupLayout(pnConsultas);
         pnConsultas.setLayout(pnConsultasLayout);
         pnConsultasLayout.setHorizontalGroup(
             pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnConsultasLayout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(lblIcono2)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnConsultasLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,6 +571,14 @@ public class PnSucursal extends javax.swing.JPanel {
                         .addGap(153, 153, 153)
                         .addComponent(txtInfo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnConsultasLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblIcono2)
+                .addGap(256, 256, 256))
+            .addGroup(pnConsultasLayout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnConsultasLayout.setVerticalGroup(
             pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -588,9 +608,11 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addComponent(lblSalas2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(29, 29, 29)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(lblIcono2)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         tbdpnSucursales.addTab("Consultas", pnConsultas);
@@ -1135,6 +1157,14 @@ public class PnSucursal extends javax.swing.JPanel {
     private void txtInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInfo3ActionPerformed
+
+    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
+
+    private void txtInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInfo1ActionPerformed
     
     private void txtNumSucursal2FocusLost(java.awt.event.FocusEvent evt) {                                            
         // TODO add your handling code here:
@@ -1299,8 +1329,8 @@ public class PnSucursal extends javax.swing.JPanel {
     }
     
     public JButton getBoton(short n){//1: Botón del registro de salas, otro: Botón del registro de empleados
-        if(n==1){
-            return btnRegSalas;
+        if(n==2){
+            return btnGuardar2;
         }
         return btnRegEmps;
     }
@@ -1314,6 +1344,7 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnRegEmps;
     private javax.swing.JButton btnRegSalas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;

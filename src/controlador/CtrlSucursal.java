@@ -30,19 +30,58 @@ public class CtrlSucursal {
     private PnSucursal scrsl;
     private DaoGen<Sucursal> dscrsl;
     private DefaultTableModel ts,tc,tg; //Tablas de salas, cajeros y gerentes, respectivamente
-    private int ns,nc,ng; //Número de salas, cajeros y gerentes, respectivamente
+    private int i,sa,nums,ns,nc,ng; //Número de salas, cajeros y gerentes, respectivamente
     private boolean sc=false,ec=false; //Banderas para activar el botón de registro de la sucursal
     private JButton btnreg; //Botón de registro de la sucursal
     
     public void setVista(PnSucursal scrsl){
         this.scrsl=scrsl;
-        ts=this.scrsl.getSalas((short)3);
-        tc=this.scrsl.getCajeros((short)3);
-        tg=this.scrsl.getGerentes((short)3);
-        btnreg=this.scrsl.getBoton((short)1);
+        btnreg=this.scrsl.getBoton((short)2);
     }
     
+    //Pestaña de modificaciones
+    public void buscarSucursales(ActionEvent ae){
+        ts=this.scrsl.getSalas((short)1);
+        tc=this.scrsl.getCajeros((short)1);
+        tg=this.scrsl.getGerentes((short)1);
+        ArrayList<Sucursal> tsuc = new ArrayList();
+        tsuc= dscrsl.leerT("Sucs.dat"); //Lectura de las sucursales registradas
+        //Comprobación de los campos al presionar el botón
+        if(this.scrsl.getNoSucursal((short)1).isEmpty() && !(this.scrsl.getUbicacion((short)1).isEmpty())){
+            for(i=0;i<tsuc.size();i++){
+                if(tsuc.get(i).getUbicacion()==this.scrsl.getUbicacion((short)1)){
+                    sa=i;
+                }
+            }
+        }
+        else if(this.scrsl.getUbicacion((short)1).isEmpty() && !(this.scrsl.getNoSucursal((short)1).isEmpty())){
+            for(i=0;i<tsuc.size();i++){
+                if(tsuc.get(i).getNoSucursal()==Integer.parseInt(this.scrsl.getNoSucursal((short)1))){
+                    sa=i;
+                }
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(scrsl,"Ingrese los datos de la sucursal que desea modificar");
+        }
+        for (int i = 0; i < tsuc.get(sa).getSalas().size(); i++) { //Salas de la sucursal consultada
+                    if (ts.getRowCount() == 0) {
+                        Object e[];
+                        e = new Object[5];
+                        e[0] = tsuc.get(sa).getSalas().get(i).getNoSala();
+                        e[1] = tsuc.get(sa).getSalas().get(i).getNoAsientos();
+                        e[2] = tsuc.get(sa).getSalas().get(i).getNoFilas();
+                        e[3] = tsuc.get(sa).getSalas().get(i).getNoColumnas();
+                        e[4] = tsuc.get(sa).getSalas().get(i).getCostoBoleto();
+                        ts.addRow(e);
+                    }
+                }
+    }   
+    
+    //Pestaña de registro
+    
     public void agregarSalas(ActionEvent ae){ //Comenzar el llenado de los datos de las salas
+        ts=this.scrsl.getSalas((short)3);
         if(!(this.scrsl.getNumSalas().isEmpty())){
             ns = Integer.parseInt(this.scrsl.getNumSalas());
             ts.setRowCount(ns);
@@ -57,6 +96,8 @@ public class CtrlSucursal {
     }
     
     public void agregarEmpleados(ActionEvent ae){ //Comenzar el llenado de los datos de los empleados
+        tc=this.scrsl.getCajeros((short)3);
+        tg=this.scrsl.getGerentes((short)3);
         if(!(this.scrsl.getNumCajeros().isEmpty()) && !(this.scrsl.getNumGerentes().isEmpty())){
             nc = Integer.parseInt(this.scrsl.getNumCajeros());
             ng = Integer.parseInt(this.scrsl.getNumGerentes());
@@ -74,6 +115,7 @@ public class CtrlSucursal {
     }
     
     public void agregarSucursal(ActionEvent ae){
+        
         Sucursal suc;
         if(this.scrsl.getNoSucursal((short)3).isEmpty() || this.scrsl.getUbicacion((short)3).isEmpty() || tablaIncompleta(ts,ns) || tablaIncompleta(tc,nc) || tablaIncompleta(tg,ng)){
             JOptionPane.showMessageDialog(scrsl, "Llene los campos vacios.");
@@ -84,10 +126,10 @@ public class CtrlSucursal {
                 Sala sal;
                 Cajero caj;
                 Gerente ger;
-                int i,numsal,numasi,numfil,numcol;
+                int numsal,numasi,numfil,numcol;
                 float cosbol,salario;
                 String numtel,nom,ap,am;
-                int nums = Integer.parseInt(this.scrsl.getNoSucursal((short)3));
+                nums = Integer.parseInt(this.scrsl.getNoSucursal((short)3));
                 String u = (this.scrsl.getUbicacion((short)3));
                 for(i=0;i<ns;i++){//Recuperación de datos de las salas
                     numsal=(int)ts.getValueAt(i,0);
