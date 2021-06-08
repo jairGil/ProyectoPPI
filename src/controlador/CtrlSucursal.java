@@ -168,7 +168,7 @@ public class CtrlSucursal {
         Sucursal suc;
         ns=ts.getRowCount();
         nc=tc.getRowCount();
-        ng=tg.getRowCount();
+        ng=tg.getRowCount(); 
         if(this.scrsl.getNoSucursal((short)m).isEmpty() || this.scrsl.getUbicacion((short)m).isEmpty() || tablaIncompleta(ts,ns,(short)0) || tablaIncompleta(tc,nc,(short)3) || tablaIncompleta(tg,ng,(short)3)){
             JOptionPane.showMessageDialog(scrsl, "Llene los campos vacios.");
         }else{
@@ -222,7 +222,8 @@ public class CtrlSucursal {
                     e.add(ger);
                 }
                 suc = new Sucursal(nums,u,s,e);
-                dscrsl.crearT(suc,"Sucs.dat");
+                tsuc.add(suc);
+                dscrsl.actualizarT(tsuc,"Sucs.dat");
             }catch(ExSucursal | ExSala | ExPersona |ExEmpleado ex){
                 JOptionPane.showMessageDialog(scrsl, error);
             }
@@ -240,7 +241,42 @@ public class CtrlSucursal {
     }
     
     public void eliminarSucursal(ActionEvent ae){
-        
+        tsuc=dscrsl.leerT("Sucs.dat");
+        try{
+                if(this.scrsl.getNoSucursal((short)4).isEmpty() && !(this.scrsl.getUbicacion((short)4).isEmpty())){
+                    for(i=0;i<tsuc.size();i++){
+                        if(tsuc.get(i).getUbicacion().contentEquals(this.scrsl.getUbicacion((short)4))){
+                            sa=i;
+                        }
+                    }
+                }
+                else if(this.scrsl.getUbicacion((short)4).isEmpty() && !(this.scrsl.getNoSucursal((short)4).isEmpty())){
+                    for(i=0;i<tsuc.size();i++){
+                        if(tsuc.get(i).getNoSucursal()==Integer.parseInt(this.scrsl.getNoSucursal((short)4))){
+                            sa=i;
+                        }
+                    }
+                }
+                else if(!(this.scrsl.getUbicacion((short)4).isEmpty()) && !(this.scrsl.getNoSucursal((short)4).isEmpty())){
+                    for(i=0;i<tsuc.size();i++){
+                        if(tsuc.get(i).getNoSucursal()==Integer.parseInt(this.scrsl.getNoSucursal((short)4)) && tsuc.get(i).getUbicacion().contentEquals(this.scrsl.getNoSucursal((short)4))){
+                            sa=i;
+                        }
+                    }
+                    if(sa==-1){
+                        error="No existe una sucursal con estos datos";
+                        throw new ExSucursal();
+                    }
+                }
+                else{
+                    error="Ingrese los datos de la sucursal que desea eliminar";
+                    throw new ExSucursal();
+                }
+                dscrsl.eliminarT(tsuc,tsuc.get(sa));
+                dscrsl.actualizarT(tsuc, "Sucs.dat");
+            }catch(ExSucursal e){
+                JOptionPane.showMessageDialog(scrsl,error);
+            }
     }
     
     static boolean tablaIncompleta(DefaultTableModel t, int n,short c){ //Revisa si a la tabla le falta algún registro en la columna indicada en c

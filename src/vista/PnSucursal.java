@@ -1004,6 +1004,11 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnEliminar.setBackground(ROJO);
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/dicon.png"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
 
@@ -1185,6 +1190,11 @@ public class PnSucursal extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.ctrlscrsl.buscarSucursales(evt,(short)4);
     }//GEN-LAST:event_btnBuscar3ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        this.ctrlscrsl.eliminarSucursal(evt);
+    }//GEN-LAST:event_btnEliminarActionPerformed
     
     private void txtNumSucursal2FocusLost(java.awt.event.FocusEvent evt) {                                            
         // TODO add your handling code here:
@@ -1367,8 +1377,6 @@ public class PnSucursal extends javax.swing.JPanel {
             default:
                 return null;
         }
-       
-        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

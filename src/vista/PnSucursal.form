@@ -1538,6 +1538,9 @@
                   <Image iconType="3" name="/iconos/dicon.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblIcono4">
               <Properties>
