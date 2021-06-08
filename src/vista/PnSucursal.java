@@ -82,7 +82,6 @@ public class PnSucursal extends javax.swing.JPanel {
         tblSalas2 = new javax.swing.JTable();
         btnBuscar2 = new javax.swing.JButton();
         lblIcono2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         pnRegistro = new javax.swing.JPanel();
         lblTitulo3 = new javax.swing.JLabel();
         lblNumSucursal3 = new javax.swing.JLabel();
@@ -291,6 +290,7 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnGuardar1.setBackground(ROJO);
         btnGuardar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
+        btnGuardar1.setEnabled(false);
         btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardar1ActionPerformed(evt);
@@ -531,13 +531,13 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnBuscar2.setBackground(ROJO);
         btnBuscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar2ActionPerformed(evt);
+            }
+        });
 
         lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/pnicono.png"))); // NOI18N
-
-        jButton1.setBackground(ROJO);
-        jButton1.setFont(FUENTE_LBL);
-        jButton1.setForeground(FG_COLOR);
-        jButton1.setText("Consulta general");
 
         javax.swing.GroupLayout pnConsultasLayout = new javax.swing.GroupLayout(pnConsultas);
         pnConsultas.setLayout(pnConsultasLayout);
@@ -575,10 +575,6 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblIcono2)
                 .addGap(256, 256, 256))
-            .addGroup(pnConsultasLayout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnConsultasLayout.setVerticalGroup(
             pnConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -608,9 +604,7 @@ public class PnSucursal extends javax.swing.JPanel {
                 .addComponent(lblSalas2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(lblIcono2)
                 .addGap(28, 28, 28))
         );
@@ -680,6 +674,11 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/gicon.png"))); // NOI18N
         btnGuardar2.setEnabled(false);
+        btnGuardar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar2ActionPerformed(evt);
+            }
+        });
 
         tbdpnEmpleados3.setForeground(FG_COLOR);
         tbdpnEmpleados3.setToolTipText("");
@@ -901,6 +900,11 @@ public class PnSucursal extends javax.swing.JPanel {
 
         btnBuscar3.setBackground(ROJO);
         btnBuscar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sicon.png"))); // NOI18N
+        btnBuscar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar3ActionPerformed(evt);
+            }
+        });
 
         lblEmpleados4.setFont(FUENTE_LBL);
         lblEmpleados4.setForeground(FG_COLOR);
@@ -1151,7 +1155,7 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
         // TODO add your handling code here:
-        this.ctrlscrsl.agregarSucursal(evt);
+        this.ctrlscrsl.agregarSucursal(evt,(short)1);
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
     private void txtInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo3ActionPerformed
@@ -1160,11 +1164,27 @@ public class PnSucursal extends javax.swing.JPanel {
 
     private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
         // TODO add your handling code here:
+        this.ctrlscrsl.buscarSucursales(evt,(short)1);
     }//GEN-LAST:event_btnBuscar1ActionPerformed
 
     private void txtInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInfo1ActionPerformed
+
+    private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
+        // TODO add your handling code here:
+        this.ctrlscrsl.agregarSucursal(evt,(short)3);
+    }//GEN-LAST:event_btnGuardar2ActionPerformed
+
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+        // TODO add your handling code here:
+        this.ctrlscrsl.buscarSucursales(evt,(short)2);
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
+
+    private void btnBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar3ActionPerformed
+        // TODO add your handling code here:
+        this.ctrlscrsl.buscarSucursales(evt,(short)4);
+    }//GEN-LAST:event_btnBuscar3ActionPerformed
     
     private void txtNumSucursal2FocusLost(java.awt.event.FocusEvent evt) {                                            
         // TODO add your handling code here:
@@ -1221,8 +1241,16 @@ public class PnSucursal extends javax.swing.JPanel {
         btnGuardar1.setBackground(ROJO_OBS);
     }                                        
 
-    private void btnGuardar11MouseExited(java.awt.event.MouseEvent evt) {                                        
+    private void btnGuardar1MouseExited(java.awt.event.MouseEvent evt) {                                        
         btnGuardar1.setBackground(ROJO);
+    }
+    
+    private void btnGuardar2MouseEntered(java.awt.event.MouseEvent evt) {                                         
+        btnGuardar2.setBackground(ROJO_OBS);
+    }                                        
+
+    private void btnGuardar2MouseExited(java.awt.event.MouseEvent evt) {                                        
+        btnGuardar2.setBackground(ROJO);
     }
     
     private void txtNumSucursal4FocusGained(java.awt.event.FocusEvent evt) {                                            
@@ -1328,11 +1356,19 @@ public class PnSucursal extends javax.swing.JPanel {
         }
     }
     
-    public JButton getBoton(short n){//1: Botón del registro de salas, otro: Botón del registro de empleados
-        if(n==2){
-            return btnGuardar2;
+    public JButton getBoton(short m){//1: Modificaciones, 3: Registros, 4: Eliminaciones
+        switch(m){
+            case 1:
+                return btnGuardar1;
+            case 3:
+                return btnGuardar2;
+            case 4:
+                return btnEliminar;
+            default:
+                return null;
         }
-        return btnRegEmps;
+       
+        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1344,7 +1380,6 @@ public class PnSucursal extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnRegEmps;
     private javax.swing.JButton btnRegSalas;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;

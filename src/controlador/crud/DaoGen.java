@@ -36,6 +36,11 @@ public class DaoGen<T> implements IGen<T> {
     
     @Override
     public void eliminarT(ArrayList<T> ol, T oe){
-       
+        int i;
+        for(i=0;i<ol.size();i++){
+            if(ol.get(i).equals(oe)){
+                ol.remove(i);
+            }
+        }
     }
 }
