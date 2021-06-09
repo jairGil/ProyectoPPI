@@ -1,5 +1,4 @@
 import controlador.CtrlInicio;
-import javax.swing.JFrame;
 import vista.FrmLogin;
 
 public class App {
