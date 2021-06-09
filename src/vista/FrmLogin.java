@@ -1,14 +1,16 @@
 package vista;
 
-import controlador.ControlInicio;
+import controlador.CtrlInicio;
+import java.awt.Image;
+import java.awt.Toolkit;
 import static vista.Estilos.*;
 
 public class FrmLogin extends javax.swing.JFrame {
     
-    private final ControlInicio control;
+    private final CtrlInicio control;
     private final FrmPrincipal frmPrincipal;
     
-    public FrmLogin(ControlInicio control) {
+    public FrmLogin(CtrlInicio control) {
         this.control = control;
         this.frmPrincipal = new FrmPrincipal(control, this);
         initComponents();
@@ -28,8 +30,9 @@ public class FrmLogin extends javax.swing.JFrame {
         lblRegistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cinema");
+        setTitle("CINE");
         setBackground(new java.awt.Color(51, 51, 51));
+        setIconImage(getIconImage());
         setLocation(new java.awt.Point(0, 0));
 
         jPanel1.setBackground(GRIS_BG);
@@ -206,6 +209,12 @@ public class FrmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblRegistroMouseClicked
 
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("iconos/logo.jpg"));
+        return retValue;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JPanel jPanel1;
