@@ -35,6 +35,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(800, 600));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -47,6 +48,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         splitPnl.setContinuousLayout(true);
 
         PnlIzquierdo.setBackground(GRIS_BG);
+        PnlIzquierdo.setMinimumSize(new java.awt.Dimension(150, 500));
+        PnlIzquierdo.setPreferredSize(new java.awt.Dimension(150, 500));
 
         btnSucursal.setText("Sucursal");
         btnSucursal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -95,7 +98,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 .addComponent(btnSala, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(btnGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         splitPnl.setLeftComponent(PnlIzquierdo);
