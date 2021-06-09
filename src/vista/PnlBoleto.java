@@ -1,5 +1,6 @@
-
 package vista;
+
+import static vista.Estilos.*;
 
 /**
  *
@@ -38,7 +39,7 @@ public class PnlBoleto extends javax.swing.JPanel {
         Basiento = new javax.swing.JTextField();
         Bpelicula = new javax.swing.JTextField();
 
-        jPanel1.setBackground(java.awt.Color GRIS_SEL = new java.awt.Color(35, 35, 35););
+        jPanel1.setBackground(GRIS_SEL);
         jPanel1.setPreferredSize(new java.awt.Dimension(622, 228));
 
         jLabel1.setFont(FUENTE_TITULOS);
