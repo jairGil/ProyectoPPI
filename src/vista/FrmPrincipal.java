@@ -1,15 +1,17 @@
 package vista;
 
-import controlador.ControlInicio;
+import controlador.CtrlInicio;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.UIManager;
 import static vista.Estilos.*;
 
 public class FrmPrincipal extends javax.swing.JFrame {
     
-    private final ControlInicio control;
+    private final CtrlInicio control;
     private final FrmLogin ventana;
 
-    public FrmPrincipal(ControlInicio control, FrmLogin ventana) {
+    public FrmPrincipal(CtrlInicio control, FrmLogin ventana) {
         this.control = control;
         this.ventana = ventana;
         initEstilos();
@@ -20,16 +22,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
+        splitPnl = new javax.swing.JSplitPane();
         PnlIzquierdo = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        btnSucursal = new javax.swing.JToggleButton();
+        btnSala = new javax.swing.JToggleButton();
+        btnGerente = new javax.swing.JToggleButton();
         PnlDerecho = new javax.swing.JPanel();
         PnlEncabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconImage(getIconImage());
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -38,66 +41,71 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jSplitPane1.setBorder(null);
-        jSplitPane1.setDividerLocation(200);
-        jSplitPane1.setDividerSize(1);
-        jSplitPane1.setContinuousLayout(true);
+        splitPnl.setBorder(null);
+        splitPnl.setDividerLocation(180);
+        splitPnl.setDividerSize(1);
+        splitPnl.setContinuousLayout(true);
 
         PnlIzquierdo.setBackground(GRIS_BG);
 
-        jToggleButton1.setText("Sucursal");
-        jToggleButton1.setBorder(null);
-        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jToggleButton1.setFocusPainted(false);
+        btnSucursal.setText("Sucursal");
+        btnSucursal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnSucursal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSucursal.setFocusPainted(false);
+        btnSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSucursalActionPerformed(evt);
+            }
+        });
 
-        jToggleButton2.setText("Sala");
-        jToggleButton2.setBorder(null);
-        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jToggleButton2.setFocusPainted(false);
+        btnSala.setText("Sala");
+        btnSala.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnSala.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSala.setFocusPainted(false);
+        btnSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalaActionPerformed(evt);
+            }
+        });
 
-        jToggleButton3.setText("Gerente");
-        jToggleButton3.setBorder(null);
-        jToggleButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jToggleButton3.setFocusPainted(false);
+        btnGerente.setText("Gerente");
+        btnGerente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        btnGerente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGerente.setFocusPainted(false);
+        btnGerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PnlIzquierdoLayout = new javax.swing.GroupLayout(PnlIzquierdo);
         PnlIzquierdo.setLayout(PnlIzquierdoLayout);
         PnlIzquierdoLayout.setHorizontalGroup(
             PnlIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnSucursal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnSala, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(btnGerente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PnlIzquierdoLayout.setVerticalGroup(
             PnlIzquierdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlIzquierdoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(btnSucursal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(btnSala, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(btnGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(PnlIzquierdo);
+        splitPnl.setLeftComponent(PnlIzquierdo);
 
         PnlDerecho.setBackground(ROJO_OBS);
-
-        javax.swing.GroupLayout PnlDerechoLayout = new javax.swing.GroupLayout(PnlDerecho);
-        PnlDerecho.setLayout(PnlDerechoLayout);
-        PnlDerechoLayout.setHorizontalGroup(
-            PnlDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
-        );
-        PnlDerechoLayout.setVerticalGroup(
-            PnlDerechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 334, Short.MAX_VALUE)
-        );
-
-        jSplitPane1.setRightComponent(PnlDerecho);
+        PnlDerecho.setLayout(new java.awt.GridLayout());
+        splitPnl.setRightComponent(PnlDerecho);
 
         PnlEncabezado.setBackground(GRIS_BG);
+        PnlEncabezado.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(FUENTE_TITULOS);
         jLabel1.setForeground(FG_COLOR);
@@ -121,7 +129,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(splitPnl)
             .addComponent(PnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -129,7 +137,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(PnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jSplitPane1))
+                .addComponent(splitPnl))
         );
 
         pack();
@@ -139,6 +147,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         control.intercambiaVista(ventana);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSucursalActionPerformed
+        control.botonSeleccionado(this, btnSucursal);
+    }//GEN-LAST:event_btnSucursalActionPerformed
+
+    private void btnSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalaActionPerformed
+        control.botonSeleccionado(this, btnSala);
+    }//GEN-LAST:event_btnSalaActionPerformed
+
+    private void btnGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenteActionPerformed
+        control.botonSeleccionado(this, btnGerente);
+    }//GEN-LAST:event_btnGerenteActionPerformed
     
     private void initEstilos() {
         UIManager.put("ToggleButton.font", FUENTE_LBL);
@@ -147,15 +167,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
         UIManager.put("ToggleButton.select", GRIS_SEL);
         UIManager.put("ToggleButton.focuspainted", false);
     }
+    
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("iconos/logo.jpg"));
+        return retValue;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PnlDerecho;
+    public javax.swing.JPanel PnlDerecho;
     private javax.swing.JPanel PnlEncabezado;
     private javax.swing.JPanel PnlIzquierdo;
+    public javax.swing.JToggleButton btnGerente;
+    public javax.swing.JToggleButton btnSala;
+    public javax.swing.JToggleButton btnSucursal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    public javax.swing.JSplitPane splitPnl;
     // End of variables declaration//GEN-END:variables
 }
