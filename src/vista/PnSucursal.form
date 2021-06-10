@@ -293,10 +293,12 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
-                            <Column editable="false" title="Nombre" type="java.lang.String"/>
-                            <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
-                            <Column editable="false" title="Salario" type="java.lang.Float"/>
+                          <Table columnCount="5" rowCount="0">
+                            <Column editable="true" title="Nombre" type="java.lang.String"/>
+                            <Column editable="true" title="Apellido Paterno" type="java.lang.Object"/>
+                            <Column editable="true" title="Apellido Materno" type="java.lang.Object"/>
+                            <Column editable="true" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
+                            <Column editable="true" title="Salario" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -329,10 +331,12 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
-                            <Column editable="false" title="Nombre" type="java.lang.String"/>
-                            <Column editable="false" title="N&#xfa;mero de tel&#xe9;fono" type="java.lang.Integer"/>
-                            <Column editable="false" title="Salario" type="java.lang.Float"/>
+                          <Table columnCount="5" rowCount="0">
+                            <Column editable="true" title="Nombre" type="java.lang.String"/>
+                            <Column editable="true" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="true" title="Apellido Materno" type="java.lang.String"/>
+                            <Column editable="true" title="N&#xfa;mero de tel&#xe9;fono" type="java.lang.Integer"/>
+                            <Column editable="true" title="Salario" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -372,11 +376,11 @@
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="0">
-                        <Column editable="false" title="No. de sala" type="java.lang.Integer"/>
-                        <Column editable="false" title="No. de asientos" type="java.lang.Integer"/>
-                        <Column editable="false" title="No. de filas" type="java.lang.Integer"/>
-                        <Column editable="false" title="No. de columnas" type="java.lang.Integer"/>
-                        <Column editable="false" title="Costo de boleto" type="java.lang.Float"/>
+                        <Column editable="true" title="No. de sala" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de asientos" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de filas" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de columnas" type="java.lang.Integer"/>
+                        <Column editable="true" title="Costo de boleto" type="java.lang.Float"/>
                       </Table>
                     </Property>
                   </Properties>
@@ -650,8 +654,10 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="false" title="Nombre" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Materno" type="java.lang.String"/>
                             <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
                             <Column editable="false" title="Salario" type="java.lang.Float"/>
                           </Table>
@@ -686,8 +692,10 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="false" title="Nombre" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Materno" type="java.lang.String"/>
                             <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
                             <Column editable="false" title="Salario" type="java.lang.Float"/>
                           </Table>
@@ -1087,11 +1095,11 @@
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="5" rowCount="0">
-                            <Column editable="false" title="Nombre" type="java.lang.String"/>
-                            <Column editable="false" title="Ap. Paterno" type="java.lang.String"/>
-                            <Column editable="false" title="Ap. Materno" type="java.lang.String"/>
-                            <Column editable="false" title="No. de Tel&#xe9;fono" type="java.lang.Integer"/>
-                            <Column editable="false" title="Salario" type="java.lang.Float"/>
+                            <Column editable="true" title="Nombre" type="java.lang.String"/>
+                            <Column editable="true" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="true" title="Apellido Materno" type="java.lang.String"/>
+                            <Column editable="true" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
+                            <Column editable="true" title="Salario" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -1125,11 +1133,11 @@
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="5" rowCount="0">
-                            <Column editable="false" title="Nombre" type="java.lang.String"/>
-                            <Column editable="false" title="Ap. Paterno" type="java.lang.String"/>
-                            <Column editable="false" title="Ap. Materno" type="java.lang.String"/>
-                            <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
-                            <Column editable="false" title="Salario" type="java.lang.Float"/>
+                            <Column editable="true" title="Nombre" type="java.lang.String"/>
+                            <Column editable="true" title="Ap. Paterno" type="java.lang.String"/>
+                            <Column editable="true" title="Ap. Materno" type="java.lang.String"/>
+                            <Column editable="true" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
+                            <Column editable="true" title="Salario" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -1158,9 +1166,9 @@
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="0">
-                        <Column editable="false" title="No. de sala" type="java.lang.Integer"/>
-                        <Column editable="false" title="No. de asientos" type="java.lang.Integer"/>
-                        <Column editable="false" title="No. de filas" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de sala" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de asientos" type="java.lang.Integer"/>
+                        <Column editable="true" title="No. de filas" type="java.lang.Integer"/>
                         <Column editable="true" title="No. de columnas" type="java.lang.Integer"/>
                         <Column editable="true" title="Costo de boleto" type="java.lang.Float"/>
                       </Table>
@@ -1324,6 +1332,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtInfo3">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="FUENTE_LBL" type="code"/>
                 </Property>
@@ -1438,8 +1447,10 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="false" title="Nombre" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Materno" type="java.lang.String"/>
                             <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
                             <Column editable="false" title="Salario" type="java.lang.Float"/>
                           </Table>
@@ -1474,8 +1485,10 @@
                           <Connection code="FG_COLOR" type="code"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="false" title="Nombre" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Paterno" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido Materno" type="java.lang.String"/>
                             <Column editable="false" title="N&#xfa;mero de Tel&#xe9;fono" type="java.lang.Integer"/>
                             <Column editable="false" title="Salario" type="java.lang.Float"/>
                           </Table>

@@ -202,22 +202,15 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane4.setViewportView(tblCajeros1);
@@ -232,22 +225,15 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane5.setViewportView(tblGerentes1);
@@ -272,16 +258,9 @@ public class PnSucursal extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane6.setViewportView(tblSalas1);
@@ -441,14 +420,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -471,14 +450,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -689,22 +668,15 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Ap. Paterno", "Ap. Materno", "No. de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane10.setViewportView(tblCajeros3);
@@ -725,16 +697,9 @@ public class PnSucursal extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane11.setViewportView(tblGerentes3);
@@ -755,16 +720,9 @@ public class PnSucursal extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         jScrollPane12.setViewportView(tblSalas3);
@@ -871,6 +829,7 @@ public class PnSucursal extends javax.swing.JPanel {
         lblTitulo4.setForeground(FG_COLOR);
         lblTitulo4.setText("Sucursales");
 
+        txtInfo3.setEditable(false);
         txtInfo3.setFont(FUENTE_LBL);
         txtInfo3.setForeground(GRIS_SEL);
         txtInfo3.setText("Ingrese el número de sucursal o su ubicación paara la eliminación de la misma");
@@ -916,14 +875,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -946,14 +905,14 @@ public class PnSucursal extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Número de Teléfono", "Salario"
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Número de Teléfono", "Salario"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
