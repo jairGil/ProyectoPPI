@@ -35,6 +35,17 @@ public class Sala implements Serializable{
         
     }
     
+    public Sala(int noSala, int noAsientos, int noFilas, int noColumnas, float costoBoleto) throws ExAsiento, ExSala {
+        setNoSala(noSala);
+        setNoAsientos(noAsientos);
+        setNoFilas(noFilas);
+        setNoColumnas(noColumnas);
+        this.lleno = lleno;
+        setCostoBoleto(costoBoleto);
+        crearAsientos(this.noFilas, this.noColumnas);
+        
+    }
+    
     public void crearAsientos(int filas, int columnas) throws ExAsiento{
         
         for(int i = 67; i <= (67 + filas); i++){

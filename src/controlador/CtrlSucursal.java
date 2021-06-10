@@ -6,6 +6,7 @@
 package controlador;
 
 import controlador.crud.DaoGen;
+import excepciones.ExAsiento;
 import excepciones.ExEmpleado;
 import excepciones.ExPersona;
 import excepciones.ExSala;
@@ -33,7 +34,7 @@ public class CtrlSucursal {
     private DefaultTableModel ts,tc,tg; //Tablas de salas, cajeros y gerentes, respectivamente
     String error;
     private int i,sa=-1,ns,nc,ng; //Número de salas, cajeros y gerentes, respectivamente
-    private boolean sc=false,ec=false; //Banderas para activar el botón de registro de la sucursal
+    private boolean sc,ec; //Banderas para activar el botón de registro de la sucursal
     private JButton btnreg; //Botón de guardado de la sucursal
     
     public void setVista(PnSucursal scrsl){
@@ -128,6 +129,7 @@ public class CtrlSucursal {
     public void agregarSalas(ActionEvent ae){ //Comenzar el llenado de los datos de las salas
         ts=this.scrsl.getSalas((short)3);
         btnreg=this.scrsl.getBoton((short)3);
+        sc=false;
         if(!(this.scrsl.getNumSalas().isEmpty())){
             ns = Integer.parseInt(this.scrsl.getNumSalas());
             ts.setRowCount(ns);
@@ -145,6 +147,7 @@ public class CtrlSucursal {
         tc=this.scrsl.getCajeros((short)3);
         tg=this.scrsl.getGerentes((short)3);
         btnreg=this.scrsl.getBoton((short)3);
+        ec=false;
         if(!(this.scrsl.getNumCajeros().isEmpty()) && !(this.scrsl.getNumGerentes().isEmpty())){
             nc = Integer.parseInt(this.scrsl.getNumCajeros());
             ng = Integer.parseInt(this.scrsl.getNumGerentes());
@@ -224,7 +227,7 @@ public class CtrlSucursal {
                 suc = new Sucursal(nums,u,s,e);
                 tsuc.add(suc);
                 dscrsl.actualizarT(tsuc,"Sucs.dat");
-            }catch(ExSucursal | ExSala | ExPersona |ExEmpleado ex){
+            }catch(ExSucursal | ExSala | ExPersona |ExEmpleado |ExAsiento ex){
                 JOptionPane.showMessageDialog(scrsl, error);
             }
         }
